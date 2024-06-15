@@ -18,6 +18,7 @@ Pour utiliser Emacs :
     ```bash
     $ sudo apt-get install texlive-full
     ```
+(LaTeX n'est pas requis pour utiliser Emacs, mais il est nécessaire pour rédiger les devoirs.)
 3. Lancer Emacs
     ```bash
     $ emacs &
