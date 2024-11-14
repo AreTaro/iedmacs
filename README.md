@@ -47,7 +47,7 @@ pour une utilisation ultérieure.
 
 Suivez ces étapes pour rédiger un devoir :
 
-1. Cliquer sur le lien "Rédiger un devoir avec l'IEDmacs", et enregistrer le document sous le chemin et le nom de votre choix avec la commande `Ctrl-x Ctrl-s`.
+1. Cliquer sur le lien "Rédiger un devoir avec l'IEDmacs", et enregistrer le document sous le répertoire et le nom de votre choix avec la commande `Ctrl-x Ctrl-s`.
 
 2. Modifiez l'en-tête du document avec les
 informations du cours et les vôtres, ainsi que le chemin d'accès au
