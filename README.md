@@ -47,16 +47,9 @@ pour une utilisation ultérieure.
 
 Suivez ces étapes pour rédiger un devoir :
 
-1. Ouvrez une copie du fichier "modele_devoir". Deux options possibles
-:
-- Si vous êtes déjà dans Emacs, utilisez la commande `Ctrl-x Ctrl-f`
-et saisissez le nom de votre fichier dans le dossier choisi,
-- Sinon,
-à partir de la ligne de commande, exécutez `emacs [CHEMIN VERS LE
-FICHIER] &` pour ouvrir une fenêtre avec un fichier portant le même
-nom.
+1. Cliquer sur le lien "Rédiger un devoir avec l'IEDmacs", et enregistrer le document sous le chemin et le nom de votre choix avec la commande `Ctrl-x Ctrl-s`.
 
-2. Modifiez l'en-tête du document `modele_devoir.org` avec les
+2. Modifiez l'en-tête du document avec les
 informations du cours et les vôtres, ainsi que le chemin d'accès au
 fichier `ied-latex-standard.org` copié précédemment :
 
