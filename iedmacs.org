@@ -298,7 +298,7 @@ l'ouverture mais aussi tout au long de son utilisation.
 
         ;; Liens
         (insert "Liens utiles:\n")
-        (insert-text-button "Rédiger un devoir dans l'IEDmacs"
+        (insert-text-button "Rédiger un devoir avec l'IEDmacs"
                           'action (lambda (_) (modele-devoir-ied-buffer))
                           'follow-link t)
         (insert "\n")
