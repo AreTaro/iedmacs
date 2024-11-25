@@ -1,5 +1,5 @@
 ;; IDEmacs by Emacs, un IDE pour l'IED.
-;; VERSION : Apollon Funky 0.2.0
+;; VERSION : Apollon Funky 0.4.0
 ;; LICENCE : GPLV3
 
 ;; Supprimer le message de démarrage
@@ -117,7 +117,8 @@
     (insert " 1. Remplacer les blocks indiqués par [] par vos informations\n")
     (insert " 2. Rédiger votre devoir en utilisant la synthaxe Orgmode\n")
     (insert " 3. Enregister votre devoir avec la commande " (propertize "Ctrl-x Ctrl-s" 'face 'bold)".\n")
-    (insert " 3. Une fois terminé, utilisez la commande " (propertize "Ctrl-c Ctrl-e l p" 'face 'bold)" pour convertir votre fichier en LaTex puis pour créer le pdf correspondant.\n")
+    (insert " 4. Une fois terminé, utilisez la commande " (propertize "Ctrl-c Ctrl-e l p" 'face 'bold)" pour convertir\n")
+    (insert "    votre fichier en LaTex puis pour créer le pdf correspondant.\n")
     ;; Basculer vers le nouveau modèle
     (switch-to-buffer buffer))))
 
@@ -356,8 +357,7 @@ manual."
 (setq default-directory "~/")
 
 ;; to display line number
-(global-display-line-numbers-mode)
-;;(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+;; (global-display-line-numbers-mode)
 
 ;; Org mode stuff
 (use-package org-bullets
