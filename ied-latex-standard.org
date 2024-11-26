@@ -2,7 +2,14 @@
 
 #+LaTeX_CLASS: org-plain-latex
 #+LaTeX_CLASS_OPTIONS: [a4paper, 11pt]
-#+LATEX_HEADER: \usepackage{lmodern} % Ensures we have the right font
+
+% J'ai choisi la police Noto car je la trouve simple et élégante,
+% mais si vous préférer un autre police ajouter supprimer ou
+% ajouter le symbole % en début de ligne, et enlever celui de la
+% ligne suivante pour réactiver lmodern
+#+LATEX_HEADER: \usepackage{noto}
+#+LATEX_HEADER: \renewcommand{\sfdefault}{phv} % Noto Sans
+%#+LATEX_HEADER: \usepackage{lmodern} % 
 
 #+LATEX_HEADER: \usepackage[T1]{fontenc}
 #+LATEX_HEADER: \usepackage[AUTO]{inputenc}
