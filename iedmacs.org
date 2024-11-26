@@ -241,6 +241,14 @@ Voici quelques commandes utile pour le thème:
 Pour plus de faciliter vous pouver créer des raccourcis vers ces
 fonctions.
 
+*** Org-mode
+Ici vous trouverez quelques tuyaux pour rédiger vos documents en
+org-mode avant de les exporter en LaTex et PDF.
+**** Lien long à exporter avec retour à la ligne
+#+begin_src 
+[[https://www.geeksforgeeks.org/inputouput-external-files-cc-java-python-competitive-programming/][https://www.geeksforgeeks.org/inputouput-external-files-cc-java-python-competitive-programming/]]
+#+end_src
+
 ** Notes de version
    Informations sur les changements importants.
 *** nom des versions
