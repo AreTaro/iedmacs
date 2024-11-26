@@ -249,6 +249,25 @@ org-mode avant de les exporter en LaTex et PDF.
 [[https://www.geeksforgeeks.org/inputouput-external-files-cc-java-python-competitive-programming/][https://www.geeksforgeeks.org/inputouput-external-files-cc-java-python-competitive-programming/]]
 #+end_src
 
+**** Balise src_export latex
+Très utile dans un document Org-mode pour écrire du texte comme si
+c'était en LaTex.
+
+Pour utiliser les balises utiliser la commande ~Ctrl-c Ctrl-,
+l~. (Note cette commande est valable pour les claviers qwerty, sur un
+clavier azerty ce serait peut-être ~Ctrl-c Ctrl-; l~.)
+
+*Ecrire un mot comme du code*
+
+Pour écrire un mot comme avec les balises "~ ~" en orgmode, équivalent
+de "` `" en markdown, utilisez directement au sein de votre texte
+~texttt{}~ comme dans l'exemple suivant :
+
+#+begin_src latex
+  Pour changer de répertoire utiliser la commande \texttt{cd} sur la
+  ligne de commande.
+#+end_src
+
 ** Notes de version
    Informations sur les changements importants.
 *** nom des versions
