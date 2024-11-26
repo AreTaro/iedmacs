@@ -299,6 +299,7 @@ voir venir, et encore de longues années devant pour l'IEDmacs.
 - *0.0.0* Première version, Novembre 2024
 - *0.3.0*: which-key menu rendu visible
 - *0.4.0*: pdf-tools, barre de commande modifiée
+- *0.5.0*: nouvelle police pour l'export LaTex
    
 ** Carte de référence rapide
    Aide-mémoire des commandes et raccourcis clavier les plus utilisés.
