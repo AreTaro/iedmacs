@@ -257,16 +257,25 @@ Pour utiliser les balises utiliser la commande ~Ctrl-c Ctrl-,
 l~. (Note cette commande est valable pour les claviers qwerty, sur un
 clavier azerty ce serait peut-être ~Ctrl-c Ctrl-; l~.)
 
-*Ecrire un mot comme du code*
+***** Ecrire un mot au format code
 
 Pour écrire un mot comme avec les balises "~ ~" en orgmode, équivalent
 de "` `" en markdown, utilisez directement au sein de votre texte
 ~texttt{}~ comme dans l'exemple suivant :
 
-#+begin_src latex
+#+begin_export latex
   Pour changer de répertoire utiliser la commande \texttt{cd} sur la
   ligne de commande.
+#+end_export
+
+***** Ecrire le symbole "_"
+
+Utiliser le symbole ci-dessous dans un "#+begin_export latex"
+
+#+begin_src latex
+ La constante "STDIN\_{}FILENO" est définie dans librairie "unistd.h".
 #+end_src
+
 
 ** Notes de version
    Informations sur les changements importants.
