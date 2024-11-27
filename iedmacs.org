@@ -245,13 +245,19 @@ fonctions.
 Ici vous trouverez quelques tuyaux pour rédiger vos documents en
 org-mode avant de les exporter en LaTex et PDF.
 **** Lien long à exporter avec retour à la ligne
+
+Pour intégrer une longue adresse URL dans votre texte, il suffit de
+l'indiquer en tant qu'hyperlien, comme indiqué ci-dessous. N'oubliez
+pas d'appuyer sur les touches ~Alt-q~ sur votre ligne ou paragraphe
+pour que Org mode ajuste correctement la mise en forme.
+
 #+begin_src 
 [[https://www.geeksforgeeks.org/inputouput-external-files-cc-java-python-competitive-programming/][https://www.geeksforgeeks.org/inputouput-external-files-cc-java-python-competitive-programming/]]
 #+end_src
 
-**** Balise src_export latex
+**** Les balises "src_export latex"
 Très utile dans un document Org-mode pour écrire du texte comme si
-c'était en LaTex.
+c'était du LaTex.
 
 Pour utiliser les balises utiliser la commande ~Ctrl-c Ctrl-,
 l~. (Note cette commande est valable pour les claviers qwerty, sur un
