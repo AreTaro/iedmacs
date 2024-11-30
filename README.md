@@ -1,7 +1,7 @@
 _(Ce sont des informations sommaires. Pour plus d'information et de
 détails voir le fichier `iedmacs.org`)_
 
-![IEDmacs Page d'Accueil](images/iedmacs_apollon_funky.png)
+![IEDmacs Page d'Accueil](images/iedmacs_apollon_funky4.png)
 
 # Aide pour Utiliser Emacs et Rendre les Devoirs de l'IED
 
