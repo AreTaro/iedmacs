@@ -81,7 +81,7 @@
       (insert "\n\n")
 
       ;; Mot de la fin
-      (insert "Pour plus d'information sur la configuration de l'IEDmacs, vous pouvez vous référer au fichier: ")
+      (insert "Pour plus d'information sur l'utilisation et la configuration de l'IEDmacs, vous pouvez vous référer au fichier: ")
       (insert-text-button "iedmacs.org\n"
                   'action (lambda (_) (find-file "~/.emacs.d/iedmacs.org"))
                   'follow-link t) 
