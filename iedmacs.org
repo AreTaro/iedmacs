@@ -282,6 +282,34 @@ Utiliser le symbole ci-dessous dans un "#+begin_export latex"
  La constante "STDIN\_{}FILENO" est définie dans librairie "unistd.h".
 #+end_src
 
+***** Ecrire du code C
+
+Pour écrire du code il préférable d'utiliser les balises
+"#+begin_export latex". Les paramètres proposés ci-desssous peuvent
+être modifiés selon vos besoins et envies.
+
+Pour insérer du code C insérer le bloc suivant :
+
+#+begin_export latex
+\lstset{
+language=C, % Spécifie que le code est en Python
+basicstyle=\sffamily\small, % Police pour le code
+keywordstyle=\bfseries\color{blue}, % Mots-clés en bleu et gras
+identifierstyle=\itshape\color{violet},
+commentstyle=\color{gray}, % Commentaires en vert
+stringstyle=\color{black}, % Chaînes en rouge
+frame=single, % Ajoute un cadre autour du code
+backgroundcolor=\color{white}, % Fond blanc clair pour le code
+breaklines=true, % Retours à la ligne automatiques
+}
+
+\begin{text}
+% cet espace permet de faire un saut de ligne
+\begin{lstlisting}
+< Copiez votre code ici >
+\end{lstlisting}
+\end{text}
+#+end_export
 
 ** Notes de version
    Informations sur les changements importants.
