@@ -721,11 +721,17 @@ selon ses préférences. Pour l'IEDmacs c'est le thème crée par "Prot"
 
 *** Ace window
 
+Ace window 
+
 #+begin_src emacs-lisp :tangle "init.el"
   ;; PACKAGE NAME: ace-window
   ;; PURPOSE: select a window more easily
   (global-set-key (kbd "M-o") 'ace-window)
+#+end_src
 
+*** Swiper
+
+#+begin_src emacs-lisp :tangle "init.el"
   ;; PACKAGE NAME: swiper
   ;; PURPOSE: facilitate search in a document
   (use-package counsel
