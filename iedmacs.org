@@ -234,12 +234,13 @@ Pour plus d'informations pour l'instant consulté le dépôt Github du
 paquet en anglais : [[https://github.com/vedang/pdf-tools/tree/30b50544e55b8dbf683c2d932d5c33ac73323a16?tab=readme-ov-file#view-and-navigate-pdfs][git repository]].
   
 *** Les Thèmes
+
 Il existe beaucoup de thèmes et chacun choisit ou modifie généralement
 le sien selon ses préférences. Pour l'IEDmacs c'est le thème crée par
 "Prot" (voir "Les Oracles"). Il a été choisi pour son confort de
 lecture, aussi bien en mode sombre et clair.
 
-Voici quelques commandes utile pour le thème:
+Voici quelques commandes utiles pour le thème:
 - ~Alt-x load-theme~ pour choisir un autre thème
 - ~Alt-x modus-theme-select~ pour choisir un autre thème parmis le
   thème "modus" de Prot.
@@ -293,7 +294,18 @@ documentation complète du paquet. ([[eww:https://github.com/karthink/gptel][Git
 
 *** eww - Emacs Web Wowser
 
+eww est le navigateur web d'Emacs. Très rudimentaire, il permet aussi
+d'aller à l'essentiel, et d'éviter les nombreuses publicités. Quant
+aux cookies ils sont pris en charge par le paquet URL
+(cf. [[eww:https://www.gnu.org/software/emacs/manual/html_node/eww/Advanced.html][emacs/manual/eww/advanced]]).
+
 ~Ctrl-c Ctrl-o~ ouvrir un lien
+
+~Alt-s Alt-w~ Chercher un mot ou une adresse
+
+~r (eww-forward-url) ~ ou ~l (eww-back-url)~ pour reculer ou avancer
+dans les pages viistées. Ces deux raccourci ne fonctionne qu'en mode
+Emacs, et pas dans le mode evil~mode, sauf si définit ainis).
 
 ** Notes de version
    Informations sur les changements importants.
