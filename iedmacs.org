@@ -693,7 +693,6 @@ alternative du manuel d'Emacs, chapitre [[eww:https://www.gnu.org/software/emacs
   )
 #+end_src
 
-
 *** Les packages
 
 Code utilisé précédemment jusqu'au <2024-12-17 Tue>.
@@ -1031,3 +1030,16 @@ Pour plus d'information, voir le dépôt [[https://github.com/karthink/gptel?tab
 
 * Recommandations
 * Sources
+** Les Oracles
+
+Les sources principales qui m'ont permis d'avancer dans l'utilisation,
+la configuration d'Emacs, mais également de sa philosophie sont par
+ordre de découverte :
+ 
+- Mike Zamansky
+
+- Protesilaos Stavrou (Prot)
+ 
+Cette liste est tout à fait personnelle, et ne reflète absolument pas
+le degré réel de connaissance et d'implication des personnes, même si
+il semble que Prot soit très actif dans la communauté Emacs.
