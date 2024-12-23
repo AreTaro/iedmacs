@@ -379,25 +379,29 @@ fichier "init.el" en utilisant la commande ~head 10
 Cette section concerne tout ce qui touche à l'aspect d'IEDmacs à
 l'ouverture mais aussi tout au long de son utilisation.
 
-   #+begin_src emacs-lisp :tangle "init.el"
-     ;; Supprimer le message de démarrage
-     (setq inhibit-startup-message t)
+#+begin_src emacs-lisp :tangle "init.el"
+    ;; Supprimer le message de démarrage
+    (setq inhibit-startup-message t)
 
-     ;; Supprimer le bar de menu
-     (menu-bar-mode -1)
+    ;; Supprimer le bar de menu
+    (menu-bar-mode -1)
 
-     ;; Supprimer la bar d'icon
-     (tool-bar-mode -1)
+    ;; Supprimer la bar d'icon
+    (tool-bar-mode -1)
 
-     ;; Lancer le buffer de démarrage
-     (add-hook 'emacs-startup-hook 'iedmacs-startup-buffer)
+    ;; Lancer le buffer de démarrage
+    (add-hook 'emacs-startup-hook 'iedmacs-startup-buffer)
 
-     ;; Supprimer le clignotement du curseur
-     (blink-cursor-mode -1)
+    ;; Place la ligne active en surbrillance
+    ;; Cela permet de rechercher plus rapidement le curseur.
+    (global-hl-line-mode +1)
 
-     ;; Supprimer la barre de défilement
-     ;; Elle n'est ni bien pratique ni bien jolie
-     (scroll-bar-mode -1)
+    ;; Supprimer le clignotement du curseur
+    (blink-cursor-mode -1)
+
+    ;; Supprimer la barre de défilement
+    ;; Elle n'est ni bien pratique ni bien jolie
+    (scroll-bar-mode -1)
 #+end_src
 
 *** Buffers personnalisés
