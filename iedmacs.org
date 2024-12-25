@@ -51,6 +51,7 @@ Ce fichier est composé de plusieurs parties comme suit:
   et le maintient de ce dépôt.
   
 * Définitions
+#+TOC: headlines 1
 ** Buffer
 
 Pour dire simplement, dans Emacs, un buffer est une fenêtre. Il peut y
