@@ -1,7 +1,7 @@
 #+title: GNU IEDmacs configuration
 #+author: AreTaro
 #+language: fr
-#+options: ':t toc:nil num:t author:t
+#+options: ':t toc:2 num:t author:t
 #+startup: content indent
 #+macro: latest-export-date (eval (format-time-string "%F %T %z"))
 #+macro: word-count (eval (count-words (point-min) (point-max)))
