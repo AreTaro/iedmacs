@@ -1,7 +1,7 @@
 #+title: GNU IEDmacs configuration
 #+author: AreTaro
 #+language: fr
-#+options: ':t toc:2 num:t author:t
+#+options: ':t toc:nil num:t author:t
 #+startup: content indent
 #+macro: latest-export-date (eval (format-time-string "%F %T %z"))
 #+macro: word-count (eval (count-words (point-min) (point-max)))
@@ -51,7 +51,6 @@ Ce fichier est composé de plusieurs parties comme suit:
   et le maintient de ce dépôt.
   
 * Définitions
-#+TOC: headlines 1
 ** Buffer
 
 Pour dire simplement, dans Emacs, un buffer est une fenêtre. Il peut y
