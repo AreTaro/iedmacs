@@ -304,8 +304,8 @@ aux cookies ils sont pris en charge par le paquet URL
 ~Alt-s Alt-w~ Chercher un mot ou une adresse
 
 ~r (eww-forward-url) ~ ou ~l (eww-back-url)~ pour reculer ou avancer
-dans les pages viistées. Ces deux raccourci ne fonctionne qu'en mode
-Emacs, et pas dans le mode evil~mode, sauf si définit ainis).
+dans les pages viistées. Ces deux raccourcis ne fonctionnent qu'en
+mode Emacs, et pas dans le mode evil~mode, sauf si définis ainis).
 
 ** Notes de version
    Informations sur les changements importants.
