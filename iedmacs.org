@@ -294,18 +294,36 @@ documentation complète du paquet. ([[eww:https://github.com/karthink/gptel][Git
 
 *** eww - Emacs Web Wowser
 
-eww est le navigateur web d'Emacs. Très rudimentaire, il permet aussi
-d'aller à l'essentiel, et d'éviter les nombreuses publicités. Quant
-aux cookies ils sont pris en charge par le paquet URL
-(cf. [[eww:https://www.gnu.org/software/emacs/manual/html_node/eww/Advanced.html][emacs/manual/eww/advanced]]).
+**Eww, le navigateur web d'Emacs*
 
-~Ctrl-c Ctrl-o~ ouvrir un lien
+Eww est un navigateur web minimaliste intégré à Emacs. Il permet
+d'accéder à l'essentiel, sans distractions ni publicités
+intempestives.
 
-~Alt-s Alt-w~ Chercher un mot ou une adresse
+**Gestion des cookies*
 
-~r (eww-forward-url) ~ ou ~l (eww-back-url)~ pour reculer ou avancer
-dans les pages viistées. Ces deux raccourcis ne fonctionnent qu'en
-mode Emacs, et pas dans le mode evil~mode, sauf si définis ainis).
+La gestion des cookies est assurée par le paquet URL. Pour plus
+d'informations, référez-vous à la documentation d'Emacs :
+
+- [[eww:https://www.gnu.org/software/emacs/manual/html_node/eww/Advanced.html][Chapitre sur Eww dans le manuel d'Emacs]]
+
+**Ouvrir un lien*
+
+- =Ctrl-c=, =Ctrl-o=
+
+**Rechercher un mot ou une adresse*
+
+- =Alt-s=, =Alt-w=
+
+**Naviguer dans l'historique*
+
+- Pour avancer : =r= (eww-forward-url)
+- Pour reculer : =l= (eww-back-url)
+
+**Remarques :**
+
+- Ces raccourcis ne fonctionnent qu'en mode Emacs, et non en mode
+  Evil, sauf s'ils sont définis explicitement.
 
 ** Notes de version
    Informations sur les changements importants.
