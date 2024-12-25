@@ -14,6 +14,10 @@
 ;; Lancer le buffer de démarrage
 (add-hook 'emacs-startup-hook 'iedmacs-startup-buffer)
 
+;; Place la ligne active en surbrillance
+;; Cela permet de rechercher plus rapidement le curseur.
+(global-hl-line-mode +1)
+
 ;; Supprimer le clignotement du curseur
 (blink-cursor-mode -1)
 
