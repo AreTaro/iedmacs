@@ -8,13 +8,13 @@
 
 
 #+begin_src emacs-lisp
- __   _______  _______  .___  ___.      ___       ______     _______.
+__   _______  _______  .___  ___.      ___       ______     _______.
 |  | |   ____||       \ |   \/   |     /   \     /      |   /       |
 |  | |  |__   |  .--.  ||  \  /  |    /  ^  \   |  ,----'  |   (----`
 |  | |   __|  |  |  |  ||  |\/|  |   /  /_\  \  |  |        \   \    
 |  | |  |____ |  '--'  ||  |  |  |  /  _____  \ |  `----.----)   |   
 |__| |_______||_______/ |__|  |__| /__/     \__\ \______|_______/    
-                                                                     
+
 #+end_src
 
 Ceci est une Version aménagée d'Emacs pour les étudiants de l'IED8 Paris
@@ -44,12 +44,12 @@ en utilisant le raccourci ~Ctrl-c Ctrl-v Ctrl-t~.
 Ce fichier est composé de plusieurs parties comme suit:
 - Définitions: Lexique de certains mots ou acronymes utilisés.
 - Documentation Utilisateur: Information pour l'installation et
-  l'utilisation.
+l'utilisation.
 - Documentation Système: Description et explication du fichier
-  "init.el"
+"init.el"
 - Recommandations: Informations et bonnes pratiques pour la rédaction
-  et le maintient de ce dépôt.
-  
+et le maintient de ce dépôt.
+
 * Définitions
 ** Buffer
 
@@ -76,27 +76,27 @@ documents à partir de texte brut.
 ** Guide d'installation
 Installation et configuration d'IEDmacs.
 1. Installer Emacs
-    ~sudo apt-get install emacs~
+~sudo apt-get install emacs~
 2. Installer LaTex
-    ~sudo apt-get install texlive-full~
+~sudo apt-get install texlive-full~
 3. Télécharger les fichiers de l'IEDmacs
-   #+begin_src shell
-   for file in init.el ied-latex-standard.org iedmacs.org; do curl -o ~/.emacs.d/$file https://raw.githubusercontent.com/AreTaro/iedmacs/main/$file; done
-   #+end_src
+#+begin_src shell
+for file in init.el ied-latex-standard.org iedmacs.org; do curl -o ~/.emacs.d/$file https://raw.githubusercontent.com/AreTaro/iedmacs/main/$file; done
+#+end_src
 
-   Il y a quatres fichiers:
-   - *init.el:* c'est le fichier lu à l'ouverture par emacs avec
-     quelques packages utiles préinstallés.
-   - *ied-latex-standard.org:* c'est le fichier qui permet la
-     configuration pour convertir votre fichier en LaTex.
-   - *iedmacs.org:* c'est le fichier qui fait office de manuel et qui
-     permet de générer le fichier "init.el" de l'IEDmacs.
-     
-   Ceci est juste une version simplifiée d'Emacs avec quelques
-   packages utiles préinstallés. Pour plus de détails, voir le
-   chapitre "Documentation Système". Libre à vous de choisir un autre
-   répertoire pour les fichiers mais il faudra modifier leur chemin
-   d'accès dans le fichier "init".
+Il y a quatres fichiers:
+- *init.el:* c'est le fichier lu à l'ouverture par emacs avec
+quelques packages utiles préinstallés.
+- *ied-latex-standard.org:* c'est le fichier qui permet la
+configuration pour convertir votre fichier en LaTex.
+- *iedmacs.org:* c'est le fichier qui fait office de manuel et qui
+permet de générer le fichier "init.el" de l'IEDmacs.
+
+Ceci est juste une version simplifiée d'Emacs avec quelques
+packages utiles préinstallés. Pour plus de détails, voir le
+chapitre "Documentation Système". Libre à vous de choisir un autre
+répertoire pour les fichiers mais il faudra modifier leur chemin
+d'accès dans le fichier "init".
 ** Guide du débutant / Tutoriel
 Explications simples pour commencer à utiliser IDEmacs et exemples
 concrets d'utilisation.
@@ -113,74 +113,74 @@ peut-être déjà en retard dans le rendu de vos devoirs et qu'il est
 possible que vous remettiez le tutoriel à plus tard. Dans ce cas voici
 quelques commandes essentiels:
 - ~Ctrl-f~, ~Ctrl-b~, ~Ctrl~p~, ~Ctrl~n~: pour avancer, reculer,
-    monter, descendre le curseur respectivement.
+monter, descendre le curseur respectivement.
 - ~Ctrl-g~ pour sortir d'un menu ou d'une commande. Souvent utile car
-  dans emacs, la touche "Esc" ne permet pas toujours de s'échapper
-  d'un menu.
+dans emacs, la touche "Esc" ne permet pas toujours de s'échapper
+d'un menu.
 - ~Ctrl-x Ctrl-c~ pour quitter
 - ~Ctrl-x f~ pour ouvrir un fichier
 - ~Ctrl-x b~ pour basculer d'une fichier ouvert (buffer) à l'autre.
 Pour la liste complète, aller voir sur la [[https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf][carte de référence]].
 *** Rédiger un devoir
 1. Ouvrir un fichier pour le devoir
-   Il y a au moins deux méthodes. La première consiste à ouvrir un
-   fichier vierge et à y insérer le code nécessaire pour l'export
-   LaTex en PDF. La seconde consiste à télécharger un fichier
-   échantillon à le code déjà ajouté.
+Il y a au moins deux méthodes. La première consiste à ouvrir un
+fichier vierge et à y insérer le code nécessaire pour l'export
+LaTex en PDF. La seconde consiste à télécharger un fichier
+échantillon à le code déjà ajouté.
 
-   *Méthode 1*
+*Méthode 1*
 
-   - Utiliser la commande ~Ctrl-x Ctrl-f~ comme pour ouvrir un fichier,
+- Utiliser la commande ~Ctrl-x Ctrl-f~ comme pour ouvrir un fichier,
 
-   - Sélectionner le dossier où enregistrer le fichier,
+- Sélectionner le dossier où enregistrer le fichier,
 
-   - Nommer le fichier et presser entrer. Cela ouvrira un nouveau buffer ou fichier vierge,
+- Nommer le fichier et presser entrer. Cela ouvrira un nouveau buffer ou fichier vierge,
 
-   - Copier le code ci-dessous, en remplaçant les informations par
-     les vôtres.
+- Copier le code ci-dessous, en remplaçant les informations par
+les vôtres.
 
-    #+BEGIN_SRC  
-       #+TITLE: [NOM DU CHAPITRE]
-       #+SUBTITLE: [NOM DU COURS]
-       #+OPTIONS: toc:t author:nil
-       #+LaTeX_HEADER: \author{[PRENOM NOM] \\ N. Etudiant : [NUMERO]}
-       #+SETUPFILE: ~/.emacs.d/ied-latex-standard.org
+#+BEGIN_SRC  
+#+TITLE: [NOM DU CHAPITRE]
+#+SUBTITLE: [NOM DU COURS]
+#+OPTIONS: toc:t author:nil
+#+LaTeX_HEADER: \author{[PRENOM NOM] \\ N. Etudiant : [NUMERO]}
+#+SETUPFILE: ~/.emacs.d/ied-latex-standard.org
 
-       \newpage
+\newpage
 
-        * Exercice X
-        ** Enoncé
-        :PROPERTIES:
-        :UNNUMBERED: t
-        :END:
+ * Exercice X
+ ** Enoncé
+ :PROPERTIES:
+ :UNNUMBERED: t
+ :END:
 
-        ** Réponse
-        :PROPERTIES:
-        :UNNUMBERED: t
-        :END:
-   #+END_SRC
+ ** Réponse
+ :PROPERTIES:
+ :UNNUMBERED: t
+ :END:
+#+END_SRC
 
-      *Méthode 2*
-      Sur la page d'accueil de l'IEDmacs, sélectionner le lien
-     "Rédiger un devoir dans l'IEDmacs". Cela ouvrira un nouveau
-     buffer avec le code ci-dessus et quelques
-     instructions. Enregistrer le fichier dans le répertoire et sous
-     le nom de votre choix en utilisant la commande ~Ctrl-x Ctrl-s~.
+*Méthode 2*
+Sur la page d'accueil de l'IEDmacs, sélectionner le lien
+"Rédiger un devoir dans l'IEDmacs". Cela ouvrira un nouveau
+buffer avec le code ci-dessus et quelques
+instructions. Enregistrer le fichier dans le répertoire et sous
+le nom de votre choix en utilisant la commande ~Ctrl-x Ctrl-s~.
 
 2. Rédiger votre dévoir
-   Utiliser la synthaxe orgmode pour écrire votre texte. Pour plus de
-   détails sur la syntax voir le dépôt en anglais [[https://github.com/fniessen/refcard-org-mode][refcard-org-mode]].
+Utiliser la synthaxe orgmode pour écrire votre texte. Pour plus de
+détails sur la syntax voir le dépôt en anglais [[https://github.com/fniessen/refcard-org-mode][refcard-org-mode]].
 
-   Vous pouvez également utiliser la synthaxe LaTex au sein de votre
-   fichier ".org" en utilisant le raccourci ~Ctrl-c Ctrl-, l~ (Clavier
-   azerty). Pour plus d'information sur la synthaxe LaTex voir le
-   dépôt de [[https://github.com/amartos/TexIEDP8][amartos]].
+Vous pouvez également utiliser la synthaxe LaTex au sein de votre
+fichier ".org" en utilisant le raccourci ~Ctrl-c Ctrl-, l~ (Clavier
+azerty). Pour plus d'information sur la synthaxe LaTex voir le
+dépôt de [[https://github.com/amartos/TexIEDP8][amartos]].
 
 3. Editer votre devoir au format PDF
-   Une fois votre devoir ou document rédiger, il suffit d'utiliser le
-   raccourci ~Ctrl-c Ctrl-e l p~, et votre fichier LaTex ainsi que le
-   document PDF seront crée automatiquement.
-  
+Une fois votre devoir ou document rédiger, il suffit d'utiliser le
+raccourci ~Ctrl-c Ctrl-e l p~, et votre fichier LaTex ainsi que le
+document PDF seront crée automatiquement.
+
 ** Guide de référence
 Description détaillée de chaque fonctionnalité du système,
 utilisation avancée et cas d'usage spécifiques.
@@ -193,22 +193,22 @@ la documentation système.
 La signification de chacune des
 indications est décrite ci-dessous en partant de la gauche :
 - La première lettre indique le mode d'édition "E" pour /emacs/, "V"
-  pour /vim/ et "I" pour le mode d'insertion de Vim.
+pour /vim/ et "I" pour le mode d'insertion de Vim.
 - Les deux lettres suivantes correspondent au mode d'écriture
-  (~input-mode~) avec "FR" pour le clavier français et "EN" pour le
-  clavier anglais. C'est le clavier anglais qui est ouvert par
-  défaut. Le clavier français est nécessaire pour écrire avec les
-  accents mais vraiment tout pourri lorsqu'il faut écrire des chiffres
-  ou des symboles. Désolé pour cela.
+(~input-mode~) avec "FR" pour le clavier français et "EN" pour le
+clavier anglais. C'est le clavier anglais qui est ouvert par
+défaut. Le clavier français est nécessaire pour écrire avec les
+accents mais vraiment tout pourri lorsqu'il faut écrire des chiffres
+ou des symboles. Désolé pour cela.
 - Ensuite la date et l'heure sont affichés. Il est possible d'ajouter
-  une seconde horloge en recopiant la partie de code correspondante et
-  en ajoutant la zone comme suit ~"%H:%M " (current-time)
-  "Europe/Berlin"~
+une seconde horloge en recopiant la partie de code correspondante et
+en ajoutant la zone comme suit ~"%H:%M " (current-time)
+"Europe/Berlin"~
 - Le nom du buffer ouvert qui correspond aussi au nom du
-  fichier ouvert est indiqué en caractère gras coloré.
+fichier ouvert est indiqué en caractère gras coloré.
 - Et enfin les deux derniers chiffres séparer par ":" représente à
-  gauche le numéro de ligne et à droite la colonne ou position du
-  curseur sur la ligne.
+gauche le numéro de ligne et à droite la colonne ou position du
+curseur sur la ligne.
 
 *** Lire un document PDF
 
@@ -232,7 +232,7 @@ attentes.
 
 Pour plus d'informations pour l'instant consulté le dépôt Github du
 paquet en anglais : [[https://github.com/vedang/pdf-tools/tree/30b50544e55b8dbf683c2d932d5c33ac73323a16?tab=readme-ov-file#view-and-navigate-pdfs][git repository]].
-  
+
 *** Les Thèmes
 
 Il existe beaucoup de thèmes et chacun choisit ou modifie généralement
@@ -243,9 +243,9 @@ lecture, aussi bien en mode sombre et clair.
 Voici quelques commandes utiles pour le thème:
 - ~Alt-x load-theme~ pour choisir un autre thème
 - ~Alt-x modus-theme-select~ pour choisir un autre thème parmis le
-  thème "modus" de Prot.
+thème "modus" de Prot.
 - ~Alt-x my-modus-themes-select~ pour passer du mode sombre au mode
-  clair.
+clair.
 
 Pour plus de faciliter vous pouver créer des raccourcis vers ces
 fonctions.
@@ -254,13 +254,13 @@ fonctions.
 
 Pour faire une recherche, c'est le paquet "swiper" est utilisé :
 - Utiliser la commande ~Ctrl-s~ ouvrir Swiper. Une fenêtre apparaîtra
-  dans la barre de commande.
+dans la barre de commande.
 - Taper le mot recherché, puis naviguer dans la liste de choix avec
-  la ~Ctrl-n~ pour descendre et ~Ctrl-p~ pour monter.
+la ~Ctrl-n~ pour descendre et ~Ctrl-p~ pour monter.
 - Une prévisualisation de la recherche et de l'emplacement concerné
-  sera visible dans le buffer.
+sera visible dans le buffer.
 - Appuyer sur Entrée pour selectionner. Cela fermera la fenêtre et
-  déplacera le curseur à l'endroit choisi.
+déplacera le curseur à l'endroit choisi.
 
 *** LLM
 
@@ -323,10 +323,10 @@ d'informations, référez-vous à la documentation d'Emacs :
 *Remarques :*
 
 - Ces raccourcis ne fonctionnent qu'en mode Emacs, et non en mode
-  Evil, sauf s'ils sont définis explicitement.
+Evil, sauf s'ils sont définis explicitement.
 
 ** Notes de version
-   Informations sur les changements importants.
+Informations sur les changements importants.
 *** nom des versions
 Voici les noms suggérés pour les prochaines versions. Il y a de quoi
 voir venir, et encore de longues années devant pour l'IEDmacs.
@@ -359,10 +359,10 @@ voir venir, et encore de longues années devant pour l'IEDmacs.
 
 **Hera Cyber**
 - *1.0.0*: optimisation du démarrage, gptel, Fichier récent (prev. fin
-  déc. 2024)
-   
+déc. 2024)
+
 ** Carte de référence rapide
-   Aide-mémoire des commandes et raccourcis clavier les plus utilisés.
+Aide-mémoire des commandes et raccourcis clavier les plus utilisés.
 ** Gestion des paquets et extensions
 * Documentation Système
 ** Principes du Système
@@ -388,9 +388,9 @@ fichier "init.el" en utilisant la commande ~head 10
 ~/.emacs.d/init.el~.
 
 #+begin_src emacs-lisp :tangle "init.el"
-  ;; IDEmacs by Emacs, un IDE pour l'IED.
-  ;; VERSION : Apollon Funky 0.4.0
-  ;; LICENCE : GPLV3
+;; IDEmacs by Emacs, un IDE pour l'IED.
+;; VERSION : Apollon Funky 0.4.0
+;; LICENCE : GPLV3
 #+end_src
 
 *** Fenêtre d'accueil
@@ -398,110 +398,110 @@ Cette section concerne tout ce qui touche à l'aspect d'IEDmacs à
 l'ouverture mais aussi tout au long de son utilisation.
 
 #+begin_src emacs-lisp :tangle "init.el"
-    ;; Supprimer le message de démarrage
-    (setq inhibit-startup-message t)
+;; Supprimer le message de démarrage
+(setq inhibit-startup-message t)
 
-    ;; Supprimer le bar de menu
-    (menu-bar-mode -1)
+;; Supprimer le bar de menu
+(menu-bar-mode -1)
 
-    ;; Supprimer la bar d'icon
-    (tool-bar-mode -1)
+;; Supprimer la bar d'icon
+(tool-bar-mode -1)
 
-    ;; Lancer le buffer de démarrage
-    (add-hook 'emacs-startup-hook 'iedmacs-startup-buffer)
+;; Lancer le buffer de démarrage
+(add-hook 'emacs-startup-hook 'iedmacs-startup-buffer)
 
-    ;; Place la ligne active en surbrillance
-    ;; Cela permet de rechercher plus rapidement le curseur.
-    (global-hl-line-mode +1)
+;; Place la ligne active en surbrillance
+;; Cela permet de rechercher plus rapidement le curseur.
+(global-hl-line-mode +1)
 
-    ;; Supprimer le clignotement du curseur
-    (blink-cursor-mode -1)
+;; Supprimer le clignotement du curseur
+(blink-cursor-mode -1)
 
-    ;; Supprimer la barre de défilement
-    ;; Elle n'est ni bien pratique ni bien jolie
-    (scroll-bar-mode -1)
+;; Supprimer la barre de défilement
+;; Elle n'est ni bien pratique ni bien jolie
+(scroll-bar-mode -1)
 #+end_src
 
 *** Buffers personnalisés
 **** Startup Buffer
 
 #+begin_src emacs-lisp :tangle "init.el"
-  (defun iedmacs-startup-buffer ()
-    "Créez un buffer de démarrage pour IEDmacs avec un logo, une explication et des liens utiles."
-    (let ((buffer (get-buffer-create "*IEDmacs*")))
-      (with-current-buffer buffer
-        (erase-buffer)
+(defun iedmacs-startup-buffer ()
+"Créez un buffer de démarrage pour IEDmacs avec un logo, une explication et des liens utiles."
+(let ((buffer (get-buffer-create "*IEDmacs*")))
+(with-current-buffer buffer
+ (erase-buffer)
 
-        (let* ((ascii-title '(
-                              "  __   _______  _______  .___  ___.      ___       ______     _______. "
-                              " |  | |   ____||       \\ |   \\/   |     /   \\     /      |   /       | "
-                              " |  | |  |__   |  .--.  ||  \\  /  |    /  ^  \\   |  ,----'  |   (----` "
-                              " |  | |   __|  |  |  |  ||  |\\/|  |   /  /_\\  \\  |  |        \\   \\     "
-                              " |  | |  |____ |  '--'  ||  |  |  |  /  _____  \\ |  `----.----)   |    "
-                              " |__| |_______||_______/ |__|  |__| /__/     \\__\\ \\______|_______/     "
-                              ))
-               (subtitle "Un IDE pour l'IED")
-               (width (window-body-width))
-               (padding-title (max 0 (/ (- width (length (car ascii-title))) 2)))
-               (padding-subtitle (max 0 (/ (- width (length subtitle)) 2))))
+ (let* ((ascii-title '(
+                       "  __   _______  _______  .___  ___.      ___       ______     _______. "
+                       " |  | |   ____||       \\ |   \\/   |     /   \\     /      |   /       | "
+                       " |  | |  |__   |  .--.  ||  \\  /  |    /  ^  \\   |  ,----'  |   (----` "
+                       " |  | |   __|  |  |  |  ||  |\\/|  |   /  /_\\  \\  |  |        \\   \\     "
+                       " |  | |  |____ |  '--'  ||  |  |  |  /  _____  \\ |  `----.----)   |    "
+                       " |__| |_______||_______/ |__|  |__| /__/     \\__\\ \\______|_______/     "
+                       ))
+        (subtitle "Un IDE pour l'IED")
+        (width (window-body-width))
+        (padding-title (max 0 (/ (- width (length (car ascii-title))) 2)))
+        (padding-subtitle (max 0 (/ (- width (length subtitle)) 2))))
 
-          ;; Insérez un titre ASCII avec des marges.
-          (dolist (line ascii-title)
-            (insert (make-string padding-title ?\s)) ; add padding spaces
-            (insert line "\n"))
+   ;; Insérez un titre ASCII avec des marges.
+   (dolist (line ascii-title)
+     (insert (make-string padding-title ?\s)) ; add padding spaces
+     (insert line "\n"))
 
-          ;; Insérer un sous-titre avec des marges
-          (insert "\n" (make-string padding-subtitle ?\s) subtitle "\n\n"))
+   ;; Insérer un sous-titre avec des marges
+   (insert "\n" (make-string padding-subtitle ?\s) subtitle "\n\n"))
 
-        ;; Paragraphe - Raccourcis utiles
-        (insert "Les commandes de bases:\n\n")
+ ;; Paragraphe - Raccourcis utiles
+ (insert "Les commandes de bases:\n\n")
 
-        ;; List des raccourcis
-        (insert (propertize "Ctrl-f" 'face 'bold) ": avancer le curseur\n")
-        (insert (propertize "Ctrl-b" 'face 'bold) ": reculer le curseur\n")
-        (insert (propertize "Ctrl-p" 'face 'bold) ": monter le curseur\n")
-        (insert (propertize "Ctrl-n" 'face 'bold) ": descendre le curseur\n")
-        (insert (propertize "Ctrl-g" 'face 'bold) ": sors moi de cette m****!\n")
-        (insert (propertize "Ctrl-x Ctrl-f" 'face 'bold) ": pour ouvrir ou créer un fichier\n")
-        (insert (propertize "Ctrl-x b" 'face 'bold) ": pour basculer d'une fichier ouvert (buffer) à l'autre.\n")
-        (insert (propertize "Ctrl-x Ctrl-c" 'face 'bold) ": pour quitter\n\n")
+ ;; List des raccourcis
+ (insert (propertize "Ctrl-f" 'face 'bold) ": avancer le curseur\n")
+ (insert (propertize "Ctrl-b" 'face 'bold) ": reculer le curseur\n")
+ (insert (propertize "Ctrl-p" 'face 'bold) ": monter le curseur\n")
+ (insert (propertize "Ctrl-n" 'face 'bold) ": descendre le curseur\n")
+ (insert (propertize "Ctrl-g" 'face 'bold) ": sors moi de cette m****!\n")
+ (insert (propertize "Ctrl-x Ctrl-f" 'face 'bold) ": pour ouvrir ou créer un fichier\n")
+ (insert (propertize "Ctrl-x b" 'face 'bold) ": pour basculer d'une fichier ouvert (buffer) à l'autre.\n")
+ (insert (propertize "Ctrl-x Ctrl-c" 'face 'bold) ": pour quitter\n\n")
 
-        ;; paragraphe
-        (insert "Pour celles et ceux qui sont familiers avec les commandes VIM, activer les avec la commande : ")
-        (insert (propertize "\"Alt-x evil-mode\"" 'face 'bold) ". Ensuite pour passer d'un mode de saisi à l'autre utiliser la commande ")
-        (insert (propertize "Ctrl-z" 'face 'bold) ".\n\n")
+ ;; paragraphe
+ (insert "Pour celles et ceux qui sont familiers avec les commandes VIM, activer les avec la commande : ")
+ (insert (propertize "\"Alt-x evil-mode\"" 'face 'bold) ". Ensuite pour passer d'un mode de saisi à l'autre utiliser la commande ")
+ (insert (propertize "Ctrl-z" 'face 'bold) ".\n\n")
 
-        ;; Liens
-        (insert "Liens utiles:\n")
-        (insert-text-button "Rédiger un devoir avec l'IEDmacs"
-                          'action (lambda (_) (modele-devoir-ied-buffer))
-                          'follow-link t)
-        (insert "\n")
-        (insert-text-button "Le Wiki Paris 8 IED"
-                            'action (lambda (_) (wiki-ied-buffer))
-                            'follow-link t)
-                            ;;'action (lambda (_) (browse-url "https://wiki.paris8-ied.net/"))
-                            ;;'follow-link t)
-        (insert "\n")
-        (insert-text-button "Carte de références des raccourcis en français"
-                            'action (lambda (_) (browse-url "https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf"))
-                            'follow-link t)
-        (insert "\n")
-        (insert-text-button "Tutorial Emacs en français (ENS)"
-                            'action (lambda (_) (eww "https://tuteurs.ens.fr/unix/editeurs/emacs.html"))
-                            'follow-link t)
-        (insert "\n\n")
+ ;; Liens
+ (insert "Liens utiles:\n")
+ (insert-text-button "Rédiger un devoir avec l'IEDmacs"
+                   'action (lambda (_) (modele-devoir-ied-buffer))
+                   'follow-link t)
+ (insert "\n")
+ (insert-text-button "Le Wiki Paris 8 IED"
+                     'action (lambda (_) (wiki-ied-buffer))
+                     'follow-link t)
+                     ;;'action (lambda (_) (browse-url "https://wiki.paris8-ied.net/"))
+                     ;;'follow-link t)
+ (insert "\n")
+ (insert-text-button "Carte de références des raccourcis en français"
+                     'action (lambda (_) (browse-url "https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf"))
+                     'follow-link t)
+ (insert "\n")
+ (insert-text-button "Tutorial Emacs en français (ENS)"
+                     'action (lambda (_) (eww "https://tuteurs.ens.fr/unix/editeurs/emacs.html"))
+                     'follow-link t)
+ (insert "\n\n")
 
-        ;; Mot de la fin
-        (insert "Pour plus d'information sur l'utilisation et la configuration de l'IEDmacs, vous pouvez vous référer au fichier: ")
-        (insert-text-button "iedmacs.org\n"
-                    'action (lambda (_) (find-file "~/.emacs.d/iedmacs.org"))
-                    'follow-link t) 
+ ;; Mot de la fin
+ (insert "Pour plus d'information sur l'utilisation et la configuration de l'IEDmacs, vous pouvez vous référer au fichier: ")
+ (insert-text-button "iedmacs.org\n"
+             'action (lambda (_) (find-file "~/.emacs.d/iedmacs.org"))
+             'follow-link t) 
 
-        ;; Configurer le buffer en mode read-only
-        (setq buffer-read-only t))
-      ;; Afficher le buffer 
-      (switch-to-buffer buffer)))
+ ;; Configurer le buffer en mode read-only
+ (setq buffer-read-only t))
+;; Afficher le buffer 
+(switch-to-buffer buffer)))
 #+end_src
 
 Quelque chose de plutôt sympa qu'il est possible de rajouter à la page
@@ -519,15 +519,15 @@ voulez, mais à titre d'exemple, disons juste avant la ligne
 (require 'recentf)
 (recentf-mode 1)
 (let ((recent-files (cl-subseq recentf-list 0 (min 5 (length recentf-list))))) ;; 5 derniers fichiers
-    (dolist (file recent-files)
-    ;; Création d'une fermeture (closure) pour capturer correctement 'file'
-    (insert-button (file-name-nondirectory file) ;; Affiche le nom du fichier
-                    'action `(lambda (_)
-                                (find-file ,file)) ;; Capture la valeur avec ',file
-                    'follow-link t
-                    'help-echo (concat "Ouvrir : " file)) ;; Info-bulle
-    ;; Afficher le chemin complet abrégé en gris clair
-    (insert "    " (propertize (abbreviate-file-name file) 'face 'shadow) "\n")))
+(dolist (file recent-files)
+;; Création d'une fermeture (closure) pour capturer correctement 'file'
+(insert-button (file-name-nondirectory file) ;; Affiche le nom du fichier
+             'action `(lambda (_)
+                         (find-file ,file)) ;; Capture la valeur avec ',file
+             'follow-link t
+             'help-echo (concat "Ouvrir : " file)) ;; Info-bulle
+;; Afficher le chemin complet abrégé en gris clair
+(insert "    " (propertize (abbreviate-file-name file) 'face 'shadow) "\n")))
 #+end_src
 
 La fonction est aussi accessible en utilsant la commande ~Alt-x
@@ -536,36 +536,36 @@ recentf-open-files~.
 **** Modèle de devoir
 
 #+begin_src emacs-lisp :tangle "init.el"
-  (defun modele-devoir-ied-buffer ()
-  "Creation d'un nouveau buffer avec un modèle pour les devoirs."
-  (let ((buffer (get-buffer-create "*Devoir*")))
-    (with-current-buffer buffer
-      (erase-buffer)
-      (org-mode)  ;; Basculer en Orgmode
-      ;; Insérer le contenu du modèle
-      (insert "#+TITLE: [NOM DU CHAPITRE]\n")
-      (insert "#+SUBTITLE: [NOM DU COURS]\n")
-      (insert "#+OPTIONS: toc:t author:nil\n")
-      (insert "#+LaTeX_HEADER: \\author{[PRENOM NOM] \\\\ N. Etudiant : [NUMERO]}\n")
-      (insert "#+SETUPFILE: ~/.emacs.d/ied-latex-standard.org\n\n")
-      (insert "\\newpage\n\n")
-      (insert "* Exercice X\n")
-      (insert "** Enoncé\n")
-      (insert " :PROPERTIES:\n")
-      (insert " :UNNUMBERED: t\n")
-      (insert " :END:\n\n")
-      (insert "** Réponse\n")
-      (insert " :PROPERTIES:\n")
-      (insert " :UNNUMBERED: t\n")
-      (insert " :END:\n\n")
-      (insert " Instructions:\n")
-      (insert " 1. Remplacer les blocks indiqués par [] par vos informations\n")
-      (insert " 2. Rédiger votre devoir en utilisant la synthaxe Orgmode\n")
-      (insert " 3. Enregister votre devoir avec la commande " (propertize "Ctrl-x Ctrl-s" 'face 'bold)".\n")
-      (insert " 4. Une fois terminé, utilisez la commande " (propertize "Ctrl-c Ctrl-e l p" 'face 'bold)" pour convertir\n")
-      (insert "    votre fichier en LaTex puis pour créer le pdf correspondant.\n")
-      ;; Basculer vers le nouveau modèle
-      (switch-to-buffer buffer))))
+(defun modele-devoir-ied-buffer ()
+"Creation d'un nouveau buffer avec un modèle pour les devoirs."
+(let ((buffer (get-buffer-create "*Devoir*")))
+(with-current-buffer buffer
+(erase-buffer)
+(org-mode)  ;; Basculer en Orgmode
+;; Insérer le contenu du modèle
+(insert "#+TITLE: [NOM DU CHAPITRE]\n")
+(insert "#+SUBTITLE: [NOM DU COURS]\n")
+(insert "#+OPTIONS: toc:t author:nil\n")
+(insert "#+LaTeX_HEADER: \\author{[PRENOM NOM] \\\\ N. Etudiant : [NUMERO]}\n")
+(insert "#+SETUPFILE: ~/.emacs.d/ied-latex-standard.org\n\n")
+(insert "\\newpage\n\n")
+(insert "* Exercice X\n")
+(insert "** Enoncé\n")
+(insert " :PROPERTIES:\n")
+(insert " :UNNUMBERED: t\n")
+(insert " :END:\n\n")
+(insert "** Réponse\n")
+(insert " :PROPERTIES:\n")
+(insert " :UNNUMBERED: t\n")
+(insert " :END:\n\n")
+(insert " Instructions:\n")
+(insert " 1. Remplacer les blocks indiqués par [] par vos informations\n")
+(insert " 2. Rédiger votre devoir en utilisant la synthaxe Orgmode\n")
+(insert " 3. Enregister votre devoir avec la commande " (propertize "Ctrl-x Ctrl-s" 'face 'bold)".\n")
+(insert " 4. Une fois terminé, utilisez la commande " (propertize "Ctrl-c Ctrl-e l p" 'face 'bold)" pour convertir\n")
+(insert "    votre fichier en LaTex puis pour créer le pdf correspondant.\n")
+;; Basculer vers le nouveau modèle
+(switch-to-buffer buffer))))
 #+end_src
 
 **** Wiki IED 8
@@ -575,61 +575,61 @@ buffer est crééer afin de reprendre les liens vers les principaux
 chapitres.
 
 #+begin_src emacs-lisp :tangle "init.el"
-  (defun wiki-ied-buffer ()
-  "Creation d'un nouveau buffer qui affiche les liens vers les chapitres du Wiki"
-  (let ((buffer (get-buffer-create "*WikiIED8*")))
-    (with-current-buffer buffer
-      (erase-buffer)
-      ;; Insérer le contenu du modèle
-      (insert (propertize "Sommaire du Wiki\n\n" 'face 'bold))
-      (insert "Cliquer sur le lien pour ouvrir la page dans eww (Emacs Web Browser)\n\n")
+(defun wiki-ied-buffer ()
+"Creation d'un nouveau buffer qui affiche les liens vers les chapitres du Wiki"
+(let ((buffer (get-buffer-create "*WikiIED8*")))
+(with-current-buffer buffer
+(erase-buffer)
+;; Insérer le contenu du modèle
+(insert (propertize "Sommaire du Wiki\n\n" 'face 'bold))
+(insert "Cliquer sur le lien pour ouvrir la page dans eww (Emacs Web Browser)\n\n")
 
-      ;; Paragraphe - Raccourcis utiles eww
-      (insert "Les commandes utiles pour naviguer avec eww:\n\n")
+;; Paragraphe - Raccourcis utiles eww
+(insert "Les commandes utiles pour naviguer avec eww:\n\n")
 
-      ;; List des raccourcis
-      (insert (propertize "r" 'face 'bold) ": page eww précédente\n")
-      (insert (propertize "l" 'face 'bold) ": page eww suivante \n")
-      (insert (propertize "H" 'face 'bold) ": historique des pages eww\n\n")
+;; List des raccourcis
+(insert (propertize "r" 'face 'bold) ": page eww précédente\n")
+(insert (propertize "l" 'face 'bold) ": page eww suivante \n")
+(insert (propertize "H" 'face 'bold) ": historique des pages eww\n\n")
 
-      ;; Paragraphe - Raccourcis utiles emacs
-      (insert "Petit rappel des commandes Emacs:\n\n")
-      (insert (propertize "Ctrl-f" 'face 'bold) ": avancer le curseur\n")
-      (insert (propertize "Ctrl-b" 'face 'bold) ": reculer le curseur\n")
-      (insert (propertize "Ctrl-p" 'face 'bold) ": monter le curseur\n")
-      (insert (propertize "Ctrl-n" 'face 'bold) ": descendre le curseur\n")
-      (insert (propertize "Ctrl-g" 'face 'bold) ": sors moi de cette m****!\n")
-      (insert (propertize "Ctrl-x b" 'face 'bold) ": pour basculer d'une fichier ouvert (buffer) à l'autre.\n\n")
+;; Paragraphe - Raccourcis utiles emacs
+(insert "Petit rappel des commandes Emacs:\n\n")
+(insert (propertize "Ctrl-f" 'face 'bold) ": avancer le curseur\n")
+(insert (propertize "Ctrl-b" 'face 'bold) ": reculer le curseur\n")
+(insert (propertize "Ctrl-p" 'face 'bold) ": monter le curseur\n")
+(insert (propertize "Ctrl-n" 'face 'bold) ": descendre le curseur\n")
+(insert (propertize "Ctrl-g" 'face 'bold) ": sors moi de cette m****!\n")
+(insert (propertize "Ctrl-x b" 'face 'bold) ": pour basculer d'une fichier ouvert (buffer) à l'autre.\n\n")
 
-      ;; Sommaire
-      (insert (propertize "Général" 'face 'bold) "\n\n")
-      (insert-text-button "Trucs cools"
-                          'action (lambda (_) (eww "https://wiki.paris8-ied.net/fr/general/cool"))
-                          'follow-link t)
-      (insert "\n")
-      (insert-text-button "Installation sur ce serveur Wiki"
-                          'action (lambda (_) (eww "https://wiki.paris8-ied.net/fr/general/installation"))
-                          'follow-link t)
-      (insert "\n\n")
-      (insert (propertize "Informations" 'face 'bold) "\n\n")
-      (insert-text-button "Licence 1"
-                          'action (lambda (_) (eww "https://wiki.paris8-ied.net/fr/L1"))
-                          'follow-link t)
-      (insert "\n")
-      (insert-text-button "Licence 2"
-                          'action (lambda (_) (eww "https://wiki.paris8-ied.net/fr/L2"))
-                          'follow-link t)
-      (insert "\n")
-      (insert-text-button "Licence 3"
-                          'action (lambda (_) (eww "https://wiki.paris8-ied.net/fr/L3"))
-                          'follow-link t)
+;; Sommaire
+(insert (propertize "Général" 'face 'bold) "\n\n")
+(insert-text-button "Trucs cools"
+                   'action (lambda (_) (eww "https://wiki.paris8-ied.net/fr/general/cool"))
+                   'follow-link t)
+(insert "\n")
+(insert-text-button "Installation sur ce serveur Wiki"
+                   'action (lambda (_) (eww "https://wiki.paris8-ied.net/fr/general/installation"))
+                   'follow-link t)
+(insert "\n\n")
+(insert (propertize "Informations" 'face 'bold) "\n\n")
+(insert-text-button "Licence 1"
+                   'action (lambda (_) (eww "https://wiki.paris8-ied.net/fr/L1"))
+                   'follow-link t)
+(insert "\n")
+(insert-text-button "Licence 2"
+                   'action (lambda (_) (eww "https://wiki.paris8-ied.net/fr/L2"))
+                   'follow-link t)
+(insert "\n")
+(insert-text-button "Licence 3"
+                   'action (lambda (_) (eww "https://wiki.paris8-ied.net/fr/L3"))
+                   'follow-link t)
 
 
-        ;; Configurer le buffer en mode read-only
-        (setq buffer-read-only t))
-    
-      ;; Basculer vers le nouveau modèle
-      (switch-to-buffer buffer)))
+ ;; Configurer le buffer en mode read-only
+ (setq buffer-read-only t))
+
+;; Basculer vers le nouveau modèle
+(switch-to-buffer buffer)))
 #+end_src
 
 *** Barre de commande
@@ -638,36 +638,36 @@ Le bloc ci-dessous permet de controler l'apparance de la barre de
 commande en bas de la fenêtre.
 
 #+begin_src emacs-lisp :tangle "init.el"
-  (display-time-mode 1)
-  (setq display-time-day-and-date t)
-  (setq column-number-mode t)
-  (setq column-line-mode t)
+(display-time-mode 1)
+(setq display-time-day-and-date t)
+(setq column-number-mode t)
+(setq column-line-mode t)
 
-  (setq-default mode-line-format
-                (list
-                 '(:eval (propertize
-                          (if (and (boundp 'evil-state)
-                                (eq evil-state 'normal) )
-                            " V " ;; VIM
-                            (if (and (boundp 'evil-state)
-                                    (eq evil-state 'insert) )
-                            " I " ;; Insert
-                            " E ") ) ;; Emacs
-                        'face 'cursor) )
-                 '(:eval (if current-input-method
-                            (propertize "FR" 'face 'italic)
-                          (propertize "EN" 'face 'italic) ) )
-                 '(:eval
-                     (propertize
-                     (format-time-string
-                     "  %-d/%-m %H:%M " (current-time) )
-                     'face 'shadow) ) 
-                 ;;'default-directory
-                 '(:eval (propertize (format-mode-line
-                                     mode-line-buffer-identification)
-                                     'face 'success) )
-                 '(:eval (propertize " %l:%c " 'face 'shadow))
-                 ) ) 
+(setq-default mode-line-format
+         (list
+          '(:eval (propertize
+                   (if (and (boundp 'evil-state)
+                         (eq evil-state 'normal) )
+                     " V " ;; VIM
+                     (if (and (boundp 'evil-state)
+                             (eq evil-state 'insert) )
+                     " I " ;; Insert
+                     " E ") ) ;; Emacs
+                 'face 'cursor) )
+          '(:eval (if current-input-method
+                     (propertize "FR" 'face 'italic)
+                   (propertize "EN" 'face 'italic) ) )
+          '(:eval
+              (propertize
+              (format-time-string
+              "  %-d/%-m %H:%M " (current-time) )
+              'face 'shadow) ) 
+          ;;'default-directory
+          '(:eval (propertize (format-mode-line
+                              mode-line-buffer-identification)
+                              'face 'success) )
+          '(:eval (propertize " %l:%c " 'face 'shadow))
+          ) ) 
 #+end_src
 
 Il est possible de rajouter bien d'autre option, dont l'indiquation de
@@ -676,21 +676,21 @@ voulu :
 
 #+begin_src emacs-lisp
 '(:eval (propertize (replace-regexp-in-string
-                    "^ Git:" "" vc-mode )
-                    'face 'warning) )
+             "^ Git:" "" vc-mode )
+             'face 'warning) )
 #+end_src
 
 La fonction `mode-line-window-selected-p` permet d'indiquer quel
 buffer est actif lorsqu'il y a plusieurs fenêtres ouvertes.
 
 #+begin_src emacs-lisp :tangle "init.el"
-  ;; Define a function to only active setting when buffer is active
-  (defun mode-line-window-selected-p ()
-      (let ((window (selected-window)))
-      (or (eq window (old-selected-window))
-          (and (minibuffer-window-active-p (minibuffer-window))
-                  (with-selected-window (minibuffer-window)
-                  (eq window (minibuffer-selected-window)))))))
+;; Define a function to only active setting when buffer is active
+(defun mode-line-window-selected-p ()
+(let ((window (selected-window)))
+(or (eq window (old-selected-window))
+   (and (minibuffer-window-active-p (minibuffer-window))
+           (with-selected-window (minibuffer-window)
+           (eq window (minibuffer-selected-window)))))))
 #+end_src
 
 *** Backup
@@ -703,12 +703,12 @@ les conserver présentes dans le dossier.
 #+begin_src emacs-lisp :tangle "init.el"
 ;;-- (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
 (setq backup-directory-alist '(("." . ".~")) ;;++
-  backup-by-copying t    ; Don't delink hardlinks
-  version-control t      ; Use version numbers on backups
-  delete-old-versions t  ; Automatically delete excess backups
-  kept-new-versions 20   ; how many of the newest versions to keep
-  kept-old-versions 5    ; and how many of the old
-  )
+backup-by-copying t    ; Don't delink hardlinks
+version-control t      ; Use version numbers on backups
+delete-old-versions t  ; Automatically delete excess backups
+kept-new-versions 20   ; how many of the newest versions to keep
+kept-old-versions 5    ; and how many of the old
+)
 #+end_src
 
 *** Les packages
@@ -716,20 +716,20 @@ les conserver présentes dans le dossier.
 Code utilisé précédemment jusqu'au <2024-12-17 Tue>.
 
 #+begin_src emacs-lisp 
-  ;; Install MELPA package
-  (require 'package)
-  (setq package-enable-at-startup nil)
-  (add-to-list 'package-archives
-               '("melpa" . "https://melpa.org/packages/"))
-  (package-initialize)
-  (package-refresh-contents)
+;; Install MELPA package
+(require 'package)
+(setq package-enable-at-startup nil)
+(add-to-list 'package-archives
+        '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+(package-refresh-contents)
 
-  ;; PACKAGE NAME: Use-package
-  ;; PURPOSE: to easily install package
-  (unless (package-installed-p 'use-package)
-    (package-refresh-contents)
-    (package-install 'use-package))
-#+end_src
+;; PACKAGE NAME: Use-package
+;; PURPOSE: to easily install package
+(unless (package-installed-p 'use-package)
+(package-refresh-contents)
+(package-install 'use-package))
+#+end_srC
 
 Remplacé le <2024-12-17 Tue> le code d'Andres Gasson ([[https://github.com/frap/emacs-literate][GitHub]]). Cela
 améliore indiscutablement la vitesse de chargement d'Emacs à
@@ -745,13 +745,13 @@ n'existe pas.
 #+begin_src emacs-lisp :tangle "init.el"
 ;; Configuration des options de chargement des paquets Elpa
 (eval-and-compile
-  (setq load-prefer-newer t
-        package-user-dir "~/.emacs.d/elpa"
-        package--init-file-ensured t
-        package-enable-at-startup nil)
+(setq load-prefer-newer t
+    package-user-dir "~/.emacs.d/elpa"
+    package--init-file-ensured t
+    package-enable-at-startup nil)
 
-  (unless (file-directory-p package-user-dir)
-    (make-directory package-user-dir t)))
+(unless (file-directory-p package-user-dir)
+(make-directory package-user-dir t)))
 #+end_src
 
 En utilisant cette approche, on s'assure que les options de chargement
@@ -764,29 +764,29 @@ organiser et gérer efficacement les dépendances des paquets Emacs.
 
 #+begin_src emacs-lisp :tangle "init.el"
 (eval-and-compile
-  (setq load-path (append load-path (directory-files package-user-dir t "^[^.]" t))))
+(setq load-path (append load-path (directory-files package-user-dir t "^[^.]" t))))
 
 ;;(setq use-package-always-defer t
 ;;      use-package-verbose t)
 
 (eval-when-compile
-  (require 'package)
+(require 'package)
 
-  (unless (assoc-default "melpa" package-archives)
-    (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t))
-  (unless (assoc-default "org" package-archives)
-    (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t))
+(unless (assoc-default "melpa" package-archives)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t))
+(unless (assoc-default "org" package-archives)
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t))
 
-  (package-initialize)
-  (unless (package-installed-p 'use-package)
-    (package-refresh-contents)
-    (package-install 'use-package))
-  (unless (package-installed-p 'bind-key)
-    (package-refresh-contents)
-    (package-install 'bind-key))
-  (require 'use-package)
-  (require 'bind-key)
-  (setq use-package-always-ensure t))
+(package-initialize)
+(unless (package-installed-p 'use-package)
+(package-refresh-contents)
+(package-install 'use-package))
+(unless (package-installed-p 'bind-key)
+(package-refresh-contents)
+(package-install 'bind-key))
+(require 'use-package)
+(require 'bind-key)
+(setq use-package-always-ensure t))
 #+end_src
 
 *** Try - essayer un package sans l'installer
@@ -796,10 +796,10 @@ plus de détail voir le [[https://github.com/larstvei/Try][dépôt GitHub]]. Le 
 un fichier temporaire.
 
 #+begin_src emacs-lisp :tangle "init.el"
-  ;; PACKAGE NAME: try
-  ;; PURPOSE: to try package without install them
-  (use-package try
-    :ensure t)
+;; PACKAGE NAME: try
+;; PURPOSE: to try package without install them
+(use-package try
+:ensure t)
 #+end_src
 
 *** which-key - menu du choix des touches
@@ -808,12 +808,12 @@ Which-key permet de visualiser les raccourcis possibles d'une commande
 en cours. Ce paquet sera inclue dans la version 30 de emacs.
 
 #+begin_src emacs-lisp :tangle "init.el"
-  ;; PACKAGE NAME: whick-key
-  ;; PURPOSE: to help to find next key, using a
-  ;; menu at the bottom of the window
-  (use-package which-key
-    :ensure t
-    :config (which-key-mode))
+;; PACKAGE NAME: whick-key
+;; PURPOSE: to help to find next key, using a
+;; menu at the bottom of the window
+(use-package which-key
+:ensure t
+:config (which-key-mode))
 #+end_src
 
 *** Le thème
@@ -822,35 +822,35 @@ selon ses préférences. Pour l'IEDmacs c'est le thème crée par "Prot"
 (voir "Les Oracles"). Il a été choisi pour son confort.
 
 #+begin_src emacs-lisp :tangle "init.el"
-  ;; PACKAGE NAME: modus-themes
-  ;; PURPOSE: theme by Protesilaos Stavrou
-  (use-package modus-themes
-    :defer t
-    :ensure t)
+;; PACKAGE NAME: modus-themes
+;; PURPOSE: theme by Protesilaos Stavrou
+(use-package modus-themes
+:defer t
+:ensure t)
 
-  ;; Ligth theme
-  (load-theme 'modus-operandi-deuteranopia :no-confirm)
+;; Ligth theme
+(load-theme 'modus-operandi-deuteranopia :no-confirm)
 
-  (defun my-modus-themes-toggle ()
-    "Toggle between `modus-operandi' and `modus-vivendi' themes.
-  This uses `enable-theme' instead of the standard method of
-  `load-theme'.  The technicalities are covered in the Modus themes
-  manual."
-    (interactive)
-    (pcase (modus-themes--current-theme)
-      ('modus-operandi-deuteranopia (progn (enable-theme 'modus-vivendi-tinted)
-                              (disable-theme 'modus-operandi-deuteranopia)))
-      ('modus-vivendi-tinted (progn (enable-theme 'modus-operandi-deuteranopia)
-                              (disable-theme 'modus-vivendi-tinted)))
-      (_ (error "No Modus theme is loaded; evaluate `modus-themes-load-themes' first"))))
+(defun my-modus-themes-toggle ()
+"Toggle between `modus-operandi' and `modus-vivendi' themes.
+This uses `enable-theme' instead of the standard method of
+`load-theme'.  The technicalities are covered in the Modus themes
+manual."
+(interactive)
+(pcase (modus-themes--current-theme)
+('modus-operandi-deuteranopia (progn (enable-theme 'modus-vivendi-tinted)
+                       (disable-theme 'modus-operandi-deuteranopia)))
+('modus-vivendi-tinted (progn (enable-theme 'modus-operandi-deuteranopia)
+                       (disable-theme 'modus-vivendi-tinted)))
+(_ (error "No Modus theme is loaded; evaluate `modus-themes-load-themes' first"))))
 #+end_src
 
 *** Ace window
 
 #+begin_src emacs-lisp :tangle "init.el"
-  ;; PACKAGE NAME: ace-window
-  ;; PURPOSE: select a window more easily
-  (global-set-key (kbd "M-o") 'ace-window)
+;; PACKAGE NAME: ace-window
+;; PURPOSE: select a window more easily
+(global-set-key (kbd "M-o") 'ace-window)
 #+end_src
 
 *** Swiper - Prévisualisation de la recherche
@@ -863,77 +863,77 @@ l'équivalent dans le texte ou un liste de fichier.
 Pour plus d'information, consulter le dépôt [[https://github.com/abo-abo/swiper/tree/8133016ab1b37da233e6daaab471e40abf0f7ba9][GitHub]].
 
 #+begin_src emacs-lisp :tangle "init.el"
-  ;; PACKAGE NAME: swiper
-  ;; PURPOSE: facilitate search in a document
-  (use-package counsel
-    :ensure t
-    )
+;; PACKAGE NAME: swiper
+;; PURPOSE: facilitate search in a document
+(use-package counsel
+:ensure t
+)
 
-  (use-package swiper
-    :ensure t
-    :config
-    (progn
-      (ivy-mode)
-      (setq ivy-use-virtual-buffers t)
-      (setq enable-recursive-minibuffers t)
-      ;; enable this if you want `swiper' to use it
-      ;; (setq search-default-mode #'char-fold-to-regexp)
-      (global-set-key "\C-s" 'swiper)
-      (global-set-key (kbd "C-c C-r") 'ivy-resume)
-      (global-set-key (kbd "<f6>") 'ivy-resume)
-      (global-set-key (kbd "M-x") 'counsel-M-x)
-      (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-      (global-set-key (kbd "<f1> f") 'counsel-describe-function)
-      (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
-      (global-set-key (kbd "<f1> o") 'counsel-describe-symbol)
-      (global-set-key (kbd "<f1> l") 'counsel-find-library)
-      (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
-      (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
-      (global-set-key (kbd "C-c g") 'counsel-git)
-      (global-set-key (kbd "C-c j") 'counsel-git-grep)
-      (global-set-key (kbd "C-c k") 'counsel-ag)
-      (global-set-key (kbd "C-x l") 'counsel-locate)
-      (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
-      (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
-      ))
+(use-package swiper
+:ensure t
+:config
+(progn
+(ivy-mode)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+;; enable this if you want `swiper' to use it
+;; (setq search-default-mode #'char-fold-to-regexp)
+(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "<f6>") 'ivy-resume)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(global-set-key (kbd "<f1> o") 'counsel-describe-symbol)
+(global-set-key (kbd "<f1> l") 'counsel-find-library)
+(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+(global-set-key (kbd "C-c g") 'counsel-git)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "C-c k") 'counsel-ag)
+(global-set-key (kbd "C-x l") 'counsel-locate)
+(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+(define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
+))
 #+end_src
 
 *** Evil Mode
 
 #+begin_src emacs-lisp :tangle "init.el"
-  ;; ====== EVIL MODE SETTINGS ========
-  ;; PACKAGE: evil
-  ;; PURPOSE: using Vim shortcuts in emacs 
-  (use-package evil
-    :ensure t
-    :init(setq evil-want-C-i-jump nil))
+;; ====== EVIL MODE SETTINGS ========
+;; PACKAGE: evil
+;; PURPOSE: using Vim shortcuts in emacs 
+(use-package evil
+:ensure t
+:init(setq evil-want-C-i-jump nil))
 
-  (setq evil-default-state 'normal)
-  (require 'evil)
-  (evil-mode 0)
+(setq evil-default-state 'normal)
+(require 'evil)
+(evil-mode 0)
 
-  ;; Biding keys
-  ;; to change evil to emacs C-z
-  (evil-set-leader 'normal (kbd "SPC"))
-  (evil-define-key 'normal 'global (kbd "<leader>bs") 'save-buffer)
-  (evil-define-key 'normal 'global (kbd "<leader>bb") 'switch-to-buffer)
-  (evil-define-key 'normal 'global (kbd "<leader>ff") 'counsel-find-file)
-  (evil-define-key 'normal 'global (kbd "<leader>ts") 'modus-themes-select) 
-  (evil-define-key 'normal 'global (kbd "<leader>tt") 'my-modus-themes-toggle) 
-  (evil-define-key 'normal 'global (kbd "<leader>1") 'delete-other-windows) 
-  (evil-define-key 'normal 'global (kbd "<leader>ws") 'ace-select-window) 
-  (evil-define-key 'normal 'global (kbd "<leader>wd") 'ace-delete-window) 
-  (evil-define-key 'normal 'global (kbd "<leader>w1") 'ace-delete-other-windows) 
-  (evil-define-key 'normal 'global (kbd "<leader>bk") 'save-buffers-kill-terminal)
-  (evil-define-key 'normal 'global (kbd "<leader>w-") 'split-window-below) 
-  (evil-define-key 'normal 'global (kbd "<leader>w/") 'split-window-right) 
-  (evil-define-key 'normal 'global (kbd "<leader>bn") 'next-buffer) 
-  (evil-define-key 'normal 'global (kbd "<leader>bp") 'previous-buffer)
-  (evil-define-key 'normal 'global (kbd "<leader>fc") 'counsel-find-file)
-  (evil-define-key 'normal 'global (kbd "<leader>bl") 'list-buffers)
-  (evil-define-key 'normal 'global (kbd "<leader>tl") 'load-themes)
-  (evil-define-key 'normal 'global (kbd "<leader>ss") 'swiper)
-  (evil-define-key 'normal 'global (kbd "<leader>l") 'org-insert-link)
+;; Biding keys
+;; to change evil to emacs C-z
+(evil-set-leader 'normal (kbd "SPC"))
+(evil-define-key 'normal 'global (kbd "<leader>bs") 'save-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>bb") 'switch-to-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>ff") 'counsel-find-file)
+(evil-define-key 'normal 'global (kbd "<leader>ts") 'modus-themes-select) 
+(evil-define-key 'normal 'global (kbd "<leader>tt") 'my-modus-themes-toggle) 
+(evil-define-key 'normal 'global (kbd "<leader>1") 'delete-other-windows) 
+(evil-define-key 'normal 'global (kbd "<leader>ws") 'ace-select-window) 
+(evil-define-key 'normal 'global (kbd "<leader>wd") 'ace-delete-window) 
+(evil-define-key 'normal 'global (kbd "<leader>w1") 'ace-delete-other-windows) 
+(evil-define-key 'normal 'global (kbd "<leader>bk") 'save-buffers-kill-terminal)
+(evil-define-key 'normal 'global (kbd "<leader>w-") 'split-window-below) 
+(evil-define-key 'normal 'global (kbd "<leader>w/") 'split-window-right) 
+(evil-define-key 'normal 'global (kbd "<leader>bn") 'next-buffer) 
+(evil-define-key 'normal 'global (kbd "<leader>bp") 'previous-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>fc") 'counsel-find-file)
+(evil-define-key 'normal 'global (kbd "<leader>bl") 'list-buffers)
+(evil-define-key 'normal 'global (kbd "<leader>tl") 'load-themes)
+(evil-define-key 'normal 'global (kbd "<leader>ss") 'swiper)
+(evil-define-key 'normal 'global (kbd "<leader>l") 'org-insert-link)
 #+end_src
 
 *** pdf-tools
@@ -943,33 +943,33 @@ final signifie "open", et qui ouvre le PDF fraîchement créé. Pour plus
 d'information sur son utilisation voir le manuel utilisateur.
 
 #+begin_src emacs-lisp :tangle "init.el"
-  (use-package pdf-tools
-    :ensure t
-    :config
-    (pdf-tools-install) )
+(use-package pdf-tools
+:ensure t
+:config
+(pdf-tools-install) )
 #+end_src
 
 *** ido
 
 #+begin_src emacs-lisp :tangle "init.el"
-  ;; ido to easy find the names of files, docs, when searching
-  ;;(setq indo-enable-flex-matching t) ;; unavailable
-  (setq ido-everywhere t)
-  (ido-mode 1)
+;; ido to easy find the names of files, docs, when searching
+;;(setq indo-enable-flex-matching t) ;; unavailable
+(setq ido-everywhere t)
+(ido-mode 1)
 #+end_src
 
 *** alias
 
 #+begin_src emacs-lisp :tangle "init.el"
-  ;; better visualization of buffer-list
-  (defalias 'list-buffers 'ibuffer)
-  ;;(defalias 'list-buffers 'ibuffer-other-window)
+;; better visualization of buffer-list
+(defalias 'list-buffers 'ibuffer)
+;;(defalias 'list-buffers 'ibuffer-other-window)
 
-  ;; to set up the directory file, when opening new file
-  (setq default-directory "~/")
+;; to set up the directory file, when opening new file
+(setq default-directory "~/")
 
-  ;; to display line number
-  ;; (global-display-line-numbers-mode)
+;; to display line number
+;; (global-display-line-numbers-mode)
 #+end_src
 
 *** gptel
@@ -991,15 +991,15 @@ connaissance de cause, concernant la collecte et l'utilisation de vos
 données, ainsi que de l'empreinte carbone désastreuse de ces modèles.
 
 #+begin_src emacs-lisp
- #+begin_src emacs-lisp :tangle "~/.emacs.d/init.el"
-  (use-package gptel
-    :ensure t
-    :config
-    (load "/home/aretaro/.emacs.d/idemacs-modules/idemacs-gptel.el") )
+#+begin_src emacs-lisp :tangle "~/.emacs.d/init.el"
+(use-package gptel
+:ensure t
+:config
+(load "/home/aretaro/.emacs.d/idemacs-modules/idemacs-gptel.el") )
 
-  ;; required to display gptel-menu
-  (setq package-install-upgrade-built-in t)
-  (progn (unload-feature 'seq t) (require 'seq))
+;; required to display gptel-menu
+(setq package-install-upgrade-built-in t)
+(progn (unload-feature 'seq t) (require 'seq))
 #+end_src
 
 
@@ -1021,27 +1021,27 @@ Pour plus d'information, voir le dépôt [[https://github.com/karthink/gptel?tab
 *** Org-mode
 
 #+begin_src emacs-lisp :tangle "init.el"
-  ;; Org mode stuff
-  (use-package org-bullets
-    :defer t
-    :ensure t
-    :config
-    (add-hook 'org-mode-hook 'org-bullets-mode))
+;; Org mode stuff
+(use-package org-bullets
+:defer t
+:ensure t
+:config
+(add-hook 'org-mode-hook 'org-bullets-mode))
 
-  ;; for converting org to pdf
-  ;; defined org-plain-latex used in latex-standard.org
-  (with-eval-after-load 'ox-latex
-    (add-to-list 'org-latex-classes
-                 '("org-plain-latex"
-                   "\\documentclass{article}
-             [NO-DEFAULT-PACKAGES]
-             [PACKAGES]
-             [EXTRA]"
-                   ("\\section{%s}" . "\\section*{%s}")
-                   ("\\subsection{%s}" . "\\subsection*{%s}")
-                   ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-                   ("\\paragraph{%s}" . "\\paragraph*{%s}")
-                   ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+;; for converting org to pdf
+;; defined org-plain-latex used in latex-standard.org
+(with-eval-after-load 'ox-latex
+(add-to-list 'org-latex-classes
+            '("org-plain-latex"
+              "\\documentclass{article}
+        [NO-DEFAULT-PACKAGES]
+        [PACKAGES]
+        [EXTRA]"
+              ("\\section{%s}" . "\\section*{%s}")
+              ("\\subsection{%s}" . "\\subsection*{%s}")
+              ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+              ("\\paragraph{%s}" . "\\paragraph*{%s}")
+              ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
 #+end_src
 
 ** A faire
