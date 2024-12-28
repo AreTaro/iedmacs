@@ -668,8 +668,6 @@ commande en bas de la fenêtre.
                                      'face 'success) )
                  '(:eval (propertize " %l:%c " 'face 'shadow))
                  ) ) 
-
-
 #+end_src
 
 Il est possible de rajouter bien d'autre option, dont l'indiquation de
@@ -697,12 +695,14 @@ buffer est actif lorsqu'il y a plusieurs fenêtres ouvertes.
 
 *** Backup
 
-Solution trouvée sur [[https://stackoverflow.com/questions/2680389/how-to-remove-all-files-ending-with-made-by-emacs][Stackoverflow]], et modifié avec une proposition
-alternative du manuel d'Emacs, chapitre [[eww:https://www.gnu.org/software/emacs/manual/html_node/emacs/Backup.html][Backup]]. 
+Solution trouvée sur [[https://stackoverflow.com/questions/2680389/how-to-remove-all-files-ending-with-made-by-emacs][Stackoverflow]], et modifiée avec une proposition
+alternative du manuel d'Emacs, chapitre [[eww:https://www.gnu.org/software/emacs/manual/html_node/emacs/Backup.html][Backup]]. Ceci permet
+d'invisibiliser les sauvegardes automatiques faites par Emacs, et de
+les conserver présentes dans le dossier.
 
 #+begin_src emacs-lisp :tangle "init.el"
-;;- (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
-(setq backup-directory-alist '(("." . ".~")) ;;+
+;;-- (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
+(setq backup-directory-alist '(("." . ".~")) ;;++
   backup-by-copying t    ; Don't delink hardlinks
   version-control t      ; Use version numbers on backups
   delete-old-versions t  ; Automatically delete excess backups
