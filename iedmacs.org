@@ -132,6 +132,7 @@ d'un menu.
 - ~Ctrl-x b~ pour basculer d'une fichier ouvert (buffer) à l'autre.
 Pour la liste complète, aller voir sur la [[https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf][carte de référence]].
 *** Rédiger un devoir
+
 1. Ouvrir un fichier pour le devoir
 Il y a au moins deux méthodes. La première consiste à ouvrir un
 fichier vierge et à y insérer le code nécessaire pour l'export
@@ -189,7 +190,7 @@ dépôt de [[https://github.com/amartos/TexIEDP8][amartos]].
 3. Editer votre devoir au format PDF
 Une fois votre devoir ou document rédiger, il suffit d'utiliser le
 raccourci ~Ctrl-c Ctrl-e l p~, et votre fichier LaTex ainsi que le
-document PDF seront crée automatiquement.
+document PDF seront créés automatiquement.
 
 ** Guide de référence
 Description détaillée de chaque fonctionnalité du système,
