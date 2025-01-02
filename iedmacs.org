@@ -394,18 +394,26 @@ Cela offre une flexibilité pour activer ou désactiver chaque
 fonctionnalité selon vos besoins sans avoir à supprimer des blocs de
 code entiers.
 
+Voici la description de chaque bloc de code :
+
 *** Entête du fichier
-Par convention les informations sur la version sont indiqués au début
-du fichier "init.el". Ainsi lorsque plusieurs version sont utilisées,
-il est possible de rapidement indentifier la version actuelle du
-fichier "init.el" en utilisant la commande ~head 10
+La convention veut que les informations de version soient indiquées au
+début du fichier ~init.el~. De cette façon, si plusieurs versions sont
+utilisées, il est possible d'identifier rapidement la version actuelle
+du fichier ~init.el~ en utilisant la commande ~head 10
 ~/.emacs.d/init.el~.
+
+Voici le contenu de ce bloc d'entête :
 
 #+begin_src emacs-lisp :tangle "init.el"
 ;; IDEmacs by Emacs, un IDE pour l'IED.
 ;; VERSION : Hera Cyber 0.0.0
-;; LICENCE : GPLV3
+;; LICENCE : GPLv3
 #+end_src
+
+Le bloc d'entetête du fichier indique la version de l'environnement de
+développement (par exemple, Hera Cyber 0.0.0) et précise que la
+licence est la GPLv3.
 
 *** Fenêtre d'accueil
 Cette section concerne tout ce qui touche à l'aspect d'IEDmacs à
