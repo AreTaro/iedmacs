@@ -17,38 +17,50 @@ __   _______  _______  .___  ___.      ___       ______     _______.
 
 #+end_src
 
-Ceci est une Version aménagée d'Emacs pour les étudiants de l'IED8 Paris
-qui le souhaitent, nommée pour l'occasion IEDmacs.
+* Introduction à IEDmacs
 
-Emacs n'est peut-être pas toujours facile à prendre
-en main, et certainement pas le meilleur IDE puisqu'il est loin de faire
-l'unanimité, mais j'ai personnellement essayé de l'abandonner
-plusieurs fois, mais à chaque fois j'y suis revenu, alors j'ai pensé
-que je devais faire quelque chose pour celles et ceux qui voudrait s'y
-essayer.
+IEDmacs est une version personnalisée d'Emacs, spécialement configurée
+pour les étudiantes et étudiants de l'IED8 Paris. Si Emacs peut
+sembler initimidant au premier abord et à mille lieux d'être considéré
+comme le meilleur environnement de développement, son adaptabilité et
+sa puissance m'ont toujours ramené à lui. 
 
-Ce document est une tentative d'explication du code du fichier
-"init.el" qui permet de personnaliser Emacs. L'objectif est d'avoir un
-version d'Emacs plus facile à prendre en main afin de rendre avec un
-peu moins de difficultés les premiers devoirs (mais ça marchera aussi
-pour les suivants). Ce document reprend le concept de "[[https://fr.wikipedia.org/wiki/Programmation_lettr%C3%A9e][Progammation
-lettrée]]" ("Literate Programming" en anglais) qui consiste à intégrer
-les explications directement au sein du code.
+A partir de cette expérience, j'ai cherché à rendre Emacs plus
+accessible à ceux qui souhaiteraient l'explorer. Ce document est une
+tentative de démystifier le code de configuration d'Emacs, contenu
+dans le fichier ~init.el~, pour celles et ceux qui sont curieux
+d'essayer. 
 
-Emacs et Orgmode permettent de générer un fichier de code à partir
-d'un fichier ~.org~ en ne conservant que les parties de code indiquées
-entre des balises dans le fichier. Ainsi, le fichier "init.el"
-disponible dans le dépôt est généré automatiquement à partir de ce fichier
-en utilisant le raccourci ~Ctrl-c Ctrl-v Ctrl-t~.
+**La Programmation Lettrée**
 
-Ce fichier est composé de plusieurs parties comme suit:
-- Définitions: Lexique de certains mots ou acronymes utilisés.
-- Documentation Utilisateur: Information pour l'installation et
-l'utilisation.
-- Documentation Système: Description et explication du fichier
-"init.el"
-- Recommandations: Informations et bonnes pratiques pour la rédaction
+Ce document adopte le concept de "[[https://fr.wikipedia.org/wiki/Programmation_lettr%C3%A9e][Progammation lettrée]]", un paradigme
+proposé par Donald Knuth dans lequel le code et son explication sont
+intégrés au sein d'un même document, pour une compréhension optimale. 
+
+Dans ce contexte, Emacs et son extension Orgmode permettent de générer
+un fichier de code à partir d'un fichier ~.org~, en extrayant
+seulement les blocs de code indiqué par des balises spécifiques. Le
+fichier ~init.el~ fourni dans ce dépôt a été généré automatiquement à
+partir de ce fichier org, en utilisant le raccourci ~Ctrl-c Ctrl-v
+Ctrl-t~.
+
+**Structure du Document**
+
+Le document se divise en plusieurs parties :
+
+1. **Définitions** : Un lexique de termes et acronymes communs
+   utilisés dans le document.
+2. **Documentation Utilisateur** : Des instructions pour
+   l'installation et l'utilisation d'IEDmacs.
+3. **Documentation Système** : Une explication du fichier de
+   configuration ~init.el~ et de comment il personnalise Emacs. 
+4. **Recommandations** : Des conseils et des bonnes pratiques pour
+   l'écriture et la maintenance de ce dépôt.
 et le maintient de ce dépôt.
+
+A travers cette structure, ce document espère faciliter l'installation
+et l'utilisation d'IEDmacs, tout en introduisant les principes de base
+de la programmation à ses utilisateurs.
 
 * Définitions
 ** Buffer
