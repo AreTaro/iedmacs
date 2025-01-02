@@ -358,8 +358,10 @@ voir venir, et encore de longues années devant pour l'IEDmacs.
 - *0.4.0*: pdf-tools, barre de commande modifiée
 
 **Hera Cyber**
-- *1.0.0*: optimisation du démarrage, gptel, Fichier récent (prev. fin
-déc. 2024)
+- *1.0.0*: optimisation de la vitesse de démarrage, gptel, Fichiers
+  récents, clignotement du curseur, surlignage de la ligne du curseur,
+  localisation de la sauvegarde des fichiers, condition de la page
+  d'ouverture.
 
 ** Carte de référence rapide
 Aide-mémoire des commandes et raccourcis clavier les plus utilisés.
