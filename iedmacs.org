@@ -735,6 +735,33 @@ chapitres.
 (switch-to-buffer buffer)))
 #+end_src
 
+*** Démarrage
+
+Cette partie explique comment Iedmacs est configuré afin de déterminté
+la page d'accueil qui s'ouvrira au démarrage.
+
+Si vous indiquez un fichier lors du lancement d'Emacs, par exemple en
+utilisant la commande ~emacs monFichier~, Iedmacs ouvrira le buffer
+nommé "monFichier".
+
+Si aucun fichier n'est indiqué lors du lancement d'Emacs,
+l'application s'ouvrira directement sur la page de démarrage de
+l'Iedmacs.
+
+Voici le code lisp pour cela :
+
+
+#+begin_src emacs-lisp :tangle "init.el"
+(add-hook 'emacs-startup-hook
+	  (lambda ()
+	    (unless (buffer-file-name)
+	      (aremacs-startup-buffer))))
+#+end_src
+
+En intégrant ce code à votre fichier de configuration "init.el", Emacs
+lancera automatiquement la page de démarrage d'Iedmacs si aucun
+fichier n'est spécifié au démarrage.
+
 *** Evil Mode
 
 #+begin_src emacs-lisp :tangle "init.el"
