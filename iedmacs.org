@@ -100,10 +100,20 @@ d'accès dans le fichier "init".
 ** Guide du débutant / Tutoriel
 Explications simples pour commencer à utiliser IDEmacs et exemples
 concrets d'utilisation.
-*** Lancer IEDmacs
-Pour lancer IEDmacs utiliser la commande ~emacs &~, ou faites le
-directement en cliquant sur l'icône emacs qui se sera créé après
-l'installation.
+*** Lancement de l'IEDmacs
+
+Pour lancer IEDmacs, vous pouvez utiliser la commande ~emacs &~ dans
+votre terminal. Cette commande démarre Emacs en arrière-plan, vous
+permettant de continuer à utiliser le terminal pour d'autres
+tâches. 
+
+Alternativement, si une icône Emacs a été créée sur votre bureaau
+après l'installation, vous pouvez lancer IEDmacs en double-cliquant
+simplement sur cette icône.
+
+Ces méthodes vous permettent de démarrer facilement et rapidement
+votre environnement IEDmacs selon vos préférences.
+
 *** Les Commandes de base
 Il est généralement recommandé de commencer par le tutoriel
 d'utilisation d'Emacs (~Ctrl-h t~) pour apprendre les nombreux
