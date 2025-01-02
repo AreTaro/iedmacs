@@ -422,6 +422,107 @@ l'ouverture mais aussi tout au long de son utilisation.
 (scroll-bar-mode -1)
 #+end_src
 
+*** Ace window
+
+#+begin_src emacs-lisp :tangle "init.el"
+;; PACKAGE NAME: ace-window
+;; PURPOSE: select a window more easily
+(global-set-key (kbd "M-o") 'ace-window)
+#+end_src
+
+*** Alias
+
+#+begin_src emacs-lisp :tangle "init.el"
+;; better visualization of buffer-list
+(defalias 'list-buffers 'ibuffer)
+;;(defalias 'list-buffers 'ibuffer-other-window)
+
+;; to set up the directory file, when opening new file
+(setq default-directory "~/")
+
+;; to display line number
+;; (global-display-line-numbers-mode)
+#+end_src
+
+*** Barre de commande
+
+Le bloc ci-dessous permet de controler l'apparance de la barre de
+commande en bas de la fenêtre.
+
+#+begin_src emacs-lisp :tangle "init.el"
+(display-time-mode 1)
+(setq display-time-day-and-date t)
+(setq column-number-mode t)
+(setq column-line-mode t)
+
+(setq-default mode-line-format
+         (list
+          '(:eval (propertize
+                   (if (and (boundp 'evil-state)
+                         (eq evil-state 'normal) )
+                     " V " ;; VIM
+                     (if (and (boundp 'evil-state)
+                             (eq evil-state 'insert) )
+                     " I " ;; Insert
+                     " E ") ) ;; Emacs
+                 'face 'cursor) )
+          '(:eval (if current-input-method
+                     (propertize "FR" 'face 'italic)
+                   (propertize "EN" 'face 'italic) ) )
+          '(:eval
+              (propertize
+              (format-time-string
+              "  %-d/%-m %H:%M " (current-time) )
+              'face 'shadow) ) 
+          ;;'default-directory
+          '(:eval (propertize (format-mode-line
+                              mode-line-buffer-identification)
+                              'face 'success) )
+          '(:eval (propertize " %l:%c " 'face 'shadow))
+          ) ) 
+#+end_src
+
+Il est possible de rajouter bien d'autre option, dont l'indiquation de
+la branche du dépôt git. Pour cela ajouter le code suivant à l'endroit
+voulu :
+
+#+begin_src emacs-lisp
+'(:eval (propertize (replace-regexp-in-string
+             "^ Git:" "" vc-mode )
+             'face 'warning) )
+#+end_src
+
+La fonction `mode-line-window-selected-p` permet d'indiquer quel
+buffer est actif lorsqu'il y a plusieurs fenêtres ouvertes.
+
+#+begin_src emacs-lisp :tangle "init.el"
+;; Define a function to only active setting when buffer is active
+(defun mode-line-window-selected-p ()
+(let ((window (selected-window)))
+(or (eq window (old-selected-window))
+   (and (minibuffer-window-active-p (minibuffer-window))
+           (with-selected-window (minibuffer-window)
+           (eq window (minibuffer-selected-window)))))))
+#+end_src
+
+*** Backup
+
+Solution trouvée sur [[https://stackoverflow.com/questions/2680389/how-to-remove-all-files-ending-with-made-by-emacs][Stackoverflow]], et modifiée avec une proposition
+alternative du manuel d'Emacs, chapitre [[eww:https://www.gnu.org/software/emacs/manual/html_node/emacs/Backup.html][Backup]]. Ceci permet
+d'invisibiliser les sauvegardes automatiques faites par Emacs, et de
+les conserver présentes dans le dossier.
+
+#+begin_src emacs-lisp :tangle "init.el"
+;;-- (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
+(setq backup-directory-alist '(("." . ".~")) ;;++
+backup-by-copying t    ; Don't delink hardlinks
+version-control t      ; Use version numbers on backups
+delete-old-versions t  ; Automatically delete excess backups
+kept-new-versions 20   ; how many of the newest versions to keep
+kept-old-versions 5    ; and how many of the old
+)
+#+end_src
+
 *** Buffers personnalisés
 **** Startup Buffer
 
@@ -632,86 +733,100 @@ chapitres.
 (switch-to-buffer buffer)))
 #+end_src
 
-*** Barre de commande
-
-Le bloc ci-dessous permet de controler l'apparance de la barre de
-commande en bas de la fenêtre.
+*** Evil Mode
 
 #+begin_src emacs-lisp :tangle "init.el"
-(display-time-mode 1)
-(setq display-time-day-and-date t)
-(setq column-number-mode t)
-(setq column-line-mode t)
+;; ====== EVIL MODE SETTINGS ========
+;; PACKAGE: evil
+;; PURPOSE: using Vim shortcuts in emacs 
+(use-package evil
+:ensure t
+:init(setq evil-want-C-i-jump nil))
 
-(setq-default mode-line-format
-         (list
-          '(:eval (propertize
-                   (if (and (boundp 'evil-state)
-                         (eq evil-state 'normal) )
-                     " V " ;; VIM
-                     (if (and (boundp 'evil-state)
-                             (eq evil-state 'insert) )
-                     " I " ;; Insert
-                     " E ") ) ;; Emacs
-                 'face 'cursor) )
-          '(:eval (if current-input-method
-                     (propertize "FR" 'face 'italic)
-                   (propertize "EN" 'face 'italic) ) )
-          '(:eval
-              (propertize
-              (format-time-string
-              "  %-d/%-m %H:%M " (current-time) )
-              'face 'shadow) ) 
-          ;;'default-directory
-          '(:eval (propertize (format-mode-line
-                              mode-line-buffer-identification)
-                              'face 'success) )
-          '(:eval (propertize " %l:%c " 'face 'shadow))
-          ) ) 
+(setq evil-default-state 'normal)
+(require 'evil)
+(evil-mode 0)
+
+;; Biding keys
+;; to change evil to emacs C-z
+(evil-set-leader 'normal (kbd "SPC"))
+(evil-define-key 'normal 'global (kbd "<leader>bs") 'save-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>bb") 'switch-to-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>ff") 'counsel-find-file)
+(evil-define-key 'normal 'global (kbd "<leader>ts") 'modus-themes-select) 
+(evil-define-key 'normal 'global (kbd "<leader>tt") 'my-modus-themes-toggle) 
+(evil-define-key 'normal 'global (kbd "<leader>1") 'delete-other-windows) 
+(evil-define-key 'normal 'global (kbd "<leader>ws") 'ace-select-window) 
+(evil-define-key 'normal 'global (kbd "<leader>wd") 'ace-delete-window) 
+(evil-define-key 'normal 'global (kbd "<leader>w1") 'ace-delete-other-windows) 
+(evil-define-key 'normal 'global (kbd "<leader>bk") 'save-buffers-kill-terminal)
+(evil-define-key 'normal 'global (kbd "<leader>w-") 'split-window-below) 
+(evil-define-key 'normal 'global (kbd "<leader>w/") 'split-window-right) 
+(evil-define-key 'normal 'global (kbd "<leader>bn") 'next-buffer) 
+(evil-define-key 'normal 'global (kbd "<leader>bp") 'previous-buffer)
+(evil-define-key 'normal 'global (kbd "<leader>fc") 'counsel-find-file)
+(evil-define-key 'normal 'global (kbd "<leader>bl") 'list-buffers)
+(evil-define-key 'normal 'global (kbd "<leader>tl") 'load-themes)
+(evil-define-key 'normal 'global (kbd "<leader>ss") 'swiper)
+(evil-define-key 'normal 'global (kbd "<leader>l") 'org-insert-link)
 #+end_src
 
-Il est possible de rajouter bien d'autre option, dont l'indiquation de
-la branche du dépôt git. Pour cela ajouter le code suivant à l'endroit
-voulu :
+*** gptel
+
+Ajouter des LLM comme Chatgpt ou Gemini à Emacs à quelque chose d'un
+peu obscène, dans le sens où la philosophie d'Emacs est d'être 100%
+libre, et que ces modèles et les sociétés qui les exploitent sont à
+l'opposé de cette philosophie, je pense, même si au moins l'une
+d'entre elle en tous les cas, se repose largement sur les logiciels
+libres pour son développement, mais en profite pour collecter et
+utiliser massivement nos données, ce pourquoi [[eww:https://en.wikipedia.org/wiki/Richard_Stallman][Richard Stallman]], l'un
+des auteurs de GNU Emacs se bat avec ferveur depuis de nombreuses
+années.
+
+Pour ce donner un brin de bonne conscience et d'éthique qui ne
+laissera personne vraiment dupe, l'activation de ce paquet ne sera
+donc pas automatique, et vous devrez l'activer vous même en toute
+connaissance de cause, concernant la collecte et l'utilisation de vos
+données, ainsi que de l'empreinte carbone désastreuse de ces modèles.
 
 #+begin_src emacs-lisp
-'(:eval (propertize (replace-regexp-in-string
-             "^ Git:" "" vc-mode )
-             'face 'warning) )
+#+begin_src emacs-lisp :tangle "~/.emacs.d/init.el"
+(use-package gptel
+:ensure t
+:config
+(load "/home/aretaro/.emacs.d/idemacs-modules/idemacs-gptel.el") )
+
+;; required to display gptel-menu
+(setq package-install-upgrade-built-in t)
+(progn (unload-feature 'seq t) (require 'seq))
 #+end_src
 
-La fonction `mode-line-window-selected-p` permet d'indiquer quel
-buffer est actif lorsqu'il y a plusieurs fenêtres ouvertes.
+
+Pour le bloc suivant il est recommander de créer un module particulier
+pour vos clés API, afin d'éviter de les partager si vous souhaitez
+mettre votre fichier ~init.el~ sur GitHub par exemple.
+
+Pour enchevêtrer le bloc ci-dessous, utilser un lien du type :
+~:tangle "~/.emacs.d/iedmacs-modules/iedmacs-gptel.el" :mkdirp yes~ à
+placer après ~#+begin_src emacs-lisp~ sur la même ligne.
+
+#+begin_src emacs-lisp 
+(setq gptel-api-key "<API_KEY>")
+(gptel-make-gemini "Gemini" :key "<API_KEY>" :stream t)
+#+end_src
+
+Pour plus d'information, voir le dépôt [[https://github.com/karthink/gptel?tab=readme-ov-file#usage][GitHub]].
+
+*** ido
 
 #+begin_src emacs-lisp :tangle "init.el"
-;; Define a function to only active setting when buffer is active
-(defun mode-line-window-selected-p ()
-(let ((window (selected-window)))
-(or (eq window (old-selected-window))
-   (and (minibuffer-window-active-p (minibuffer-window))
-           (with-selected-window (minibuffer-window)
-           (eq window (minibuffer-selected-window)))))))
+;; ido to easy find the names of files, docs, when searching
+;;(setq indo-enable-flex-matching t) ;; unavailable
+(setq ido-everywhere t)
+(ido-mode 1)
 #+end_src
 
-*** Backup
-
-Solution trouvée sur [[https://stackoverflow.com/questions/2680389/how-to-remove-all-files-ending-with-made-by-emacs][Stackoverflow]], et modifiée avec une proposition
-alternative du manuel d'Emacs, chapitre [[eww:https://www.gnu.org/software/emacs/manual/html_node/emacs/Backup.html][Backup]]. Ceci permet
-d'invisibiliser les sauvegardes automatiques faites par Emacs, et de
-les conserver présentes dans le dossier.
-
-#+begin_src emacs-lisp :tangle "init.el"
-;;-- (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
-(setq backup-directory-alist '(("." . ".~")) ;;++
-backup-by-copying t    ; Don't delink hardlinks
-version-control t      ; Use version numbers on backups
-delete-old-versions t  ; Automatically delete excess backups
-kept-new-versions 20   ; how many of the newest versions to keep
-kept-old-versions 5    ; and how many of the old
-)
-#+end_src
-
-*** Les packages
+*** Paquets
 
 Code utilisé précédemment jusqu'au <2024-12-17 Tue>.
 
@@ -789,68 +904,43 @@ organiser et gérer efficacement les dépendances des paquets Emacs.
 (setq use-package-always-ensure t))
 #+end_src
 
-*** Try - essayer un package sans l'installer
-
-Le package ~try~ permet d'essayer un package sans l'installer. Pour
-plus de détail voir le [[https://github.com/larstvei/Try][dépôt GitHub]]. Le package sera enregistré dans
-un fichier temporaire.
-
-#+begin_src emacs-lisp :tangle "init.el"
-;; PACKAGE NAME: try
-;; PURPOSE: to try package without install them
-(use-package try
-:ensure t)
-#+end_src
-
-*** which-key - menu du choix des touches
-
-Which-key permet de visualiser les raccourcis possibles d'une commande
-en cours. Ce paquet sera inclue dans la version 30 de emacs.
+*** pdf-tools
+Paquet permettant de visualiser et modifier les fichiers PDF. Utiliser
+également lors de l'export avec la commande ~C-v C-e l o~ dont le "o"
+final signifie "open", et qui ouvre le PDF fraîchement créé. Pour plus
+d'information sur son utilisation voir le manuel utilisateur.
 
 #+begin_src emacs-lisp :tangle "init.el"
-;; PACKAGE NAME: whick-key
-;; PURPOSE: to help to find next key, using a
-;; menu at the bottom of the window
-(use-package which-key
+(use-package pdf-tools
 :ensure t
-:config (which-key-mode))
+:config
+(pdf-tools-install) )
 #+end_src
 
-*** Le thème
-Il existe beaucoup de thèmes et chacun choisit ou modifie le sien
-selon ses préférences. Pour l'IEDmacs c'est le thème crée par "Prot"
-(voir "Les Oracles"). Il a été choisi pour son confort.
+*** Org-mode
 
 #+begin_src emacs-lisp :tangle "init.el"
-;; PACKAGE NAME: modus-themes
-;; PURPOSE: theme by Protesilaos Stavrou
-(use-package modus-themes
+;; Org mode stuff
+(use-package org-bullets
 :defer t
-:ensure t)
+:ensure t
+:config
+(add-hook 'org-mode-hook 'org-bullets-mode))
 
-;; Ligth theme
-(load-theme 'modus-operandi-deuteranopia :no-confirm)
-
-(defun my-modus-themes-toggle ()
-"Toggle between `modus-operandi' and `modus-vivendi' themes.
-This uses `enable-theme' instead of the standard method of
-`load-theme'.  The technicalities are covered in the Modus themes
-manual."
-(interactive)
-(pcase (modus-themes--current-theme)
-('modus-operandi-deuteranopia (progn (enable-theme 'modus-vivendi-tinted)
-                       (disable-theme 'modus-operandi-deuteranopia)))
-('modus-vivendi-tinted (progn (enable-theme 'modus-operandi-deuteranopia)
-                       (disable-theme 'modus-vivendi-tinted)))
-(_ (error "No Modus theme is loaded; evaluate `modus-themes-load-themes' first"))))
-#+end_src
-
-*** Ace window
-
-#+begin_src emacs-lisp :tangle "init.el"
-;; PACKAGE NAME: ace-window
-;; PURPOSE: select a window more easily
-(global-set-key (kbd "M-o") 'ace-window)
+;; for converting org to pdf
+;; defined org-plain-latex used in latex-standard.org
+(with-eval-after-load 'ox-latex
+(add-to-list 'org-latex-classes
+            '("org-plain-latex"
+              "\\documentclass{article}
+        [NO-DEFAULT-PACKAGES]
+        [PACKAGES]
+        [EXTRA]"
+              ("\\section{%s}" . "\\section*{%s}")
+              ("\\subsection{%s}" . "\\subsection*{%s}")
+              ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+              ("\\paragraph{%s}" . "\\paragraph*{%s}")
+              ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
 #+end_src
 
 *** Swiper - Prévisualisation de la recherche
@@ -898,150 +988,60 @@ Pour plus d'information, consulter le dépôt [[https://github.com/abo-abo/swipe
 ))
 #+end_src
 
-*** Evil Mode
+*** Thème
+Il existe beaucoup de thèmes et chacun choisit ou modifie le sien
+selon ses préférences. Pour l'IEDmacs c'est le thème crée par "Prot"
+(voir "Les Oracles"). Il a été choisi pour son confort.
 
 #+begin_src emacs-lisp :tangle "init.el"
-;; ====== EVIL MODE SETTINGS ========
-;; PACKAGE: evil
-;; PURPOSE: using Vim shortcuts in emacs 
-(use-package evil
-:ensure t
-:init(setq evil-want-C-i-jump nil))
-
-(setq evil-default-state 'normal)
-(require 'evil)
-(evil-mode 0)
-
-;; Biding keys
-;; to change evil to emacs C-z
-(evil-set-leader 'normal (kbd "SPC"))
-(evil-define-key 'normal 'global (kbd "<leader>bs") 'save-buffer)
-(evil-define-key 'normal 'global (kbd "<leader>bb") 'switch-to-buffer)
-(evil-define-key 'normal 'global (kbd "<leader>ff") 'counsel-find-file)
-(evil-define-key 'normal 'global (kbd "<leader>ts") 'modus-themes-select) 
-(evil-define-key 'normal 'global (kbd "<leader>tt") 'my-modus-themes-toggle) 
-(evil-define-key 'normal 'global (kbd "<leader>1") 'delete-other-windows) 
-(evil-define-key 'normal 'global (kbd "<leader>ws") 'ace-select-window) 
-(evil-define-key 'normal 'global (kbd "<leader>wd") 'ace-delete-window) 
-(evil-define-key 'normal 'global (kbd "<leader>w1") 'ace-delete-other-windows) 
-(evil-define-key 'normal 'global (kbd "<leader>bk") 'save-buffers-kill-terminal)
-(evil-define-key 'normal 'global (kbd "<leader>w-") 'split-window-below) 
-(evil-define-key 'normal 'global (kbd "<leader>w/") 'split-window-right) 
-(evil-define-key 'normal 'global (kbd "<leader>bn") 'next-buffer) 
-(evil-define-key 'normal 'global (kbd "<leader>bp") 'previous-buffer)
-(evil-define-key 'normal 'global (kbd "<leader>fc") 'counsel-find-file)
-(evil-define-key 'normal 'global (kbd "<leader>bl") 'list-buffers)
-(evil-define-key 'normal 'global (kbd "<leader>tl") 'load-themes)
-(evil-define-key 'normal 'global (kbd "<leader>ss") 'swiper)
-(evil-define-key 'normal 'global (kbd "<leader>l") 'org-insert-link)
-#+end_src
-
-*** pdf-tools
-Paquet permettant de visualiser et modifier les fichiers PDF. Utiliser
-également lors de l'export avec la commande ~C-v C-e l o~ dont le "o"
-final signifie "open", et qui ouvre le PDF fraîchement créé. Pour plus
-d'information sur son utilisation voir le manuel utilisateur.
-
-#+begin_src emacs-lisp :tangle "init.el"
-(use-package pdf-tools
-:ensure t
-:config
-(pdf-tools-install) )
-#+end_src
-
-*** ido
-
-#+begin_src emacs-lisp :tangle "init.el"
-;; ido to easy find the names of files, docs, when searching
-;;(setq indo-enable-flex-matching t) ;; unavailable
-(setq ido-everywhere t)
-(ido-mode 1)
-#+end_src
-
-*** alias
-
-#+begin_src emacs-lisp :tangle "init.el"
-;; better visualization of buffer-list
-(defalias 'list-buffers 'ibuffer)
-;;(defalias 'list-buffers 'ibuffer-other-window)
-
-;; to set up the directory file, when opening new file
-(setq default-directory "~/")
-
-;; to display line number
-;; (global-display-line-numbers-mode)
-#+end_src
-
-*** gptel
-
-Ajouter des LLM comme Chatgpt ou Gemini à Emacs à quelque chose d'un
-peu obscène, dans le sens où la philosophie d'Emacs est d'être 100%
-libre, et que ces modèles et les sociétés qui les exploitent sont à
-l'opposé de cette philosophie, je pense, même si au moins l'une
-d'entre elle en tous les cas, se repose largement sur les logiciels
-libres pour son développement, mais en profite pour collecter et
-utiliser massivement nos données, ce pourquoi [[eww:https://en.wikipedia.org/wiki/Richard_Stallman][Richard Stallman]], l'un
-des auteurs de GNU Emacs se bat avec ferveur depuis de nombreuses
-années.
-
-Pour ce donner un brin de bonne conscience et d'éthique qui ne
-laissera personne vraiment dupe, l'activation de ce paquet ne sera
-donc pas automatique, et vous devrez l'activer vous même en toute
-connaissance de cause, concernant la collecte et l'utilisation de vos
-données, ainsi que de l'empreinte carbone désastreuse de ces modèles.
-
-#+begin_src emacs-lisp
-#+begin_src emacs-lisp :tangle "~/.emacs.d/init.el"
-(use-package gptel
-:ensure t
-:config
-(load "/home/aretaro/.emacs.d/idemacs-modules/idemacs-gptel.el") )
-
-;; required to display gptel-menu
-(setq package-install-upgrade-built-in t)
-(progn (unload-feature 'seq t) (require 'seq))
-#+end_src
-
-
-Pour le bloc suivant il est recommander de créer un module particulier
-pour vos clés API, afin d'éviter de les partager si vous souhaitez
-mettre votre fichier ~init.el~ sur GitHub par exemple.
-
-Pour enchevêtrer le bloc ci-dessous, utilser un lien du type :
-~:tangle "~/.emacs.d/iedmacs-modules/iedmacs-gptel.el" :mkdirp yes~ à
-placer après ~#+begin_src emacs-lisp~ sur la même ligne.
-
-#+begin_src emacs-lisp 
-(setq gptel-api-key "<API_KEY>")
-(gptel-make-gemini "Gemini" :key "<API_KEY>" :stream t)
-#+end_src
-
-Pour plus d'information, voir le dépôt [[https://github.com/karthink/gptel?tab=readme-ov-file#usage][GitHub]].
-
-*** Org-mode
-
-#+begin_src emacs-lisp :tangle "init.el"
-;; Org mode stuff
-(use-package org-bullets
+;; PACKAGE NAME: modus-themes
+;; PURPOSE: theme by Protesilaos Stavrou
+(use-package modus-themes
 :defer t
-:ensure t
-:config
-(add-hook 'org-mode-hook 'org-bullets-mode))
+:ensure t)
 
-;; for converting org to pdf
-;; defined org-plain-latex used in latex-standard.org
-(with-eval-after-load 'ox-latex
-(add-to-list 'org-latex-classes
-            '("org-plain-latex"
-              "\\documentclass{article}
-        [NO-DEFAULT-PACKAGES]
-        [PACKAGES]
-        [EXTRA]"
-              ("\\section{%s}" . "\\section*{%s}")
-              ("\\subsection{%s}" . "\\subsection*{%s}")
-              ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-              ("\\paragraph{%s}" . "\\paragraph*{%s}")
-              ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+;; Ligth theme
+(load-theme 'modus-operandi-deuteranopia :no-confirm)
+
+(defun my-modus-themes-toggle ()
+"Toggle between `modus-operandi' and `modus-vivendi' themes.
+This uses `enable-theme' instead of the standard method of
+`load-theme'.  The technicalities are covered in the Modus themes
+manual."
+(interactive)
+(pcase (modus-themes--current-theme)
+('modus-operandi-deuteranopia (progn (enable-theme 'modus-vivendi-tinted)
+                       (disable-theme 'modus-operandi-deuteranopia)))
+('modus-vivendi-tinted (progn (enable-theme 'modus-operandi-deuteranopia)
+                       (disable-theme 'modus-vivendi-tinted)))
+(_ (error "No Modus theme is loaded; evaluate `modus-themes-load-themes' first"))))
+#+end_src
+
+*** Try - essayer un package sans l'installer
+
+Le package ~try~ permet d'essayer un package sans l'installer. Pour
+plus de détail voir le [[https://github.com/larstvei/Try][dépôt GitHub]]. Le package sera enregistré dans
+un fichier temporaire.
+
+#+begin_src emacs-lisp :tangle "init.el"
+;; PACKAGE NAME: try
+;; PURPOSE: to try package without install them
+(use-package try
+:ensure t)
+#+end_src
+
+*** which-key - menu du choix des touches
+
+Which-key permet de visualiser les raccourcis possibles d'une commande
+en cours. Ce paquet sera inclue dans la version 30 de emacs.
+
+#+begin_src emacs-lisp :tangle "init.el"
+;; PACKAGE NAME: whick-key
+;; PURPOSE: to help to find next key, using a
+;; menu at the bottom of the window
+(use-package which-key
+:ensure t
+:config (which-key-mode))
 #+end_src
 
 ** A faire
