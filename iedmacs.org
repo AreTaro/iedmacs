@@ -418,7 +418,7 @@ Voici le contenu de ce bloc d'entête :
 
 #+begin_src emacs-lisp :tangle "init.el"
 ;; IDEmacs by Emacs, un IDE pour l'IED.
-;; VERSION : Hera Cyber 0.0.0
+;; VERSION : Hera Cyber 0.1.0
 ;; LICENCE : GPLv3
 #+end_src
 
@@ -785,7 +785,7 @@ Voici le code lisp pour cela :
 (add-hook 'emacs-startup-hook
 	  (lambda ()
 	    (unless (buffer-file-name)
-	      (aremacs-startup-buffer))))
+	      (iedmacs-startup-buffer))))
 #+end_src
 
 En intégrant ce code à votre fichier de configuration "init.el", Emacs

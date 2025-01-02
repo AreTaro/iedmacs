@@ -1,6 +1,6 @@
 ;; IDEmacs by Emacs, un IDE pour l'IED.
-;; VERSION : Hera Cyber 0.0.0
-;; LICENCE : GPLV3
+;; VERSION : Hera Cyber 0.1.0
+;; LICENCE : GPLv3
 
 ;; Supprimer le message de démarrage
 (setq inhibit-startup-message t)
@@ -254,7 +254,7 @@ kept-old-versions 5    ; and how many of the old
 (add-hook 'emacs-startup-hook
 	  (lambda ()
 	    (unless (buffer-file-name)
-	      (aremacs-startup-buffer))))
+	      (iedmacs-startup-buffer))))
 
 ;; ====== EVIL MODE SETTINGS ========
 ;; PACKAGE: evil
