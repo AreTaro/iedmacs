@@ -370,17 +370,29 @@ Aide-mémoire des commandes et raccourcis clavier les plus utilisés.
 ** Principes du Système
 Objectifs et philosophie de conceptions d'IDEmacs.
 ** Spécification / Conception
-Lors de son démarrage, Emacs recherche d'abord un fichier nommé
-"init.el" contenant du code Lisp qu'il exécute. Le fichier "init.el"
-de l'IEDmacs est automatiquement généré par des blocs de code
-spécifiques. Tout bloc de code commençant par une directive ~:tangle
-"init.el"~ sera inclus dans le fichier "init.el" généré en utilisant la
-commande ~Ctrl-c Ctrl-v Ctrl-t~.
+Lors du démarrage, Emacs recherche un fichier nommé "init.el"
+qui contient du code Lisp a exécuter. L'IEDmacs génère automatiquement
+ce fichier "init.el" à partir de blocs de code spécifiques. 
 
-Pour personnaliser votre configuration dans l'IEDmacs, vous pouvez
-ajouter ou supprimer des blocs de code selon vos besoins. Vous pouvez
-également activer ou désactiver des commandes en supprimant ou en
-ajoutant les symboles ~;;~ devant la ou les commandes souhaitées.
+Chaque bloc de code commançant par la directive ~:tangle
+"init.el"~ sera inclus dans le fichier "init.el" généré. Vous pouvez
+le faire en utilisant la commande suivante : ~Ctrl-c Ctrl-v Ctrl-t~.
+
+**Personnalisation de l'IEDmacs**
+
+Pour personnaliser votre configuration dans IEDmacs, vous pouvez
+ajouter ou supprimer des blocs de code selon vos besoins. 
+
+Il est possible d'activer ou de désactiver les commandes. Seules les
+commandes sans symboles ~;;~ devant seront exécutées.
+
+Ainsi, pour désactiver une commande, ajoutez simplement ~;;~ devant la
+ligne de la commande, ou bien effacez la directive "tangle" en tête de
+bloc. Pour l'activer, retirer les symboles ~;;~.
+
+Cela offre une flexibilité pour activer ou désactiver chaque
+fonctionnalité selon vos besoins sans avoir à supprimer des blocs de
+code entiers.
 
 *** Entête du fichier
 Par convention les informations sur la version sont indiqués au début
