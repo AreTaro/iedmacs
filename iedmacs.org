@@ -391,7 +391,7 @@ fichier "init.el" en utilisant la commande ~head 10
 
 #+begin_src emacs-lisp :tangle "init.el"
 ;; IDEmacs by Emacs, un IDE pour l'IED.
-;; VERSION : Apollon Funky 0.4.0
+;; VERSION : Hera Cyber 0.0.0
 ;; LICENCE : GPLV3
 #+end_src
 
@@ -749,7 +749,6 @@ l'application s'ouvrira directement sur la page de démarrage de
 l'Iedmacs.
 
 Voici le code lisp pour cela :
-
 
 #+begin_src emacs-lisp :tangle "init.el"
 (add-hook 'emacs-startup-hook
