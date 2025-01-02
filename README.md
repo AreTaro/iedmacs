@@ -1,7 +1,12 @@
-_(Ce sont des informations sommaires. Pour plus d'information et de
-détails voir le fichier `iedmacs.org`)_
+_Ces informations sont fournies à titres indicatif et visent à offrir
+une introduction rapide à l'utilisation de l'IEDmacs. Pour des
+informations plus détaillées et approfondies, veuillez consulter le
+fichier ~iedmacs.org~ qui contient une documentation complète sur
+l'exploitation et la personnalisation de l'IEDmacs_
 
-![IEDmacs Page d'Accueil](images/iedmacs_apollon_funky4.png)
+*Dernière Version : Hera Cyber 0.1*
+
+![IEDmacs Page d'Accueil](images/iedmacs_hera_cyber_0.png)
 
 # Aide pour Utiliser Emacs et Rendre les Devoirs de l'IED
 
