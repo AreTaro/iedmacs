@@ -266,7 +266,7 @@ lecture, aussi bien en mode sombre et clair.
 Voici quelques commandes utiles pour le thème:
 - ~Alt-x load-theme~ pour choisir un autre thème
 - ~Alt-x modus-theme-select~ pour choisir un autre thème parmis le
-thème "modus" de Prot.
+thème "modus" de Protesilaos Stavrou.
 - ~Alt-x my-modus-themes-select~ pour passer du mode sombre au mode
 clair.
 
