@@ -84,13 +84,14 @@ la fonction que vous souhaitez ajouter ou modifier.
 
 Prochains ajouts prévus:
 - ~pdf-tools pour lire et annoter les documents pdf~
-- gptel pour utiliser Chat-GPT directement dans l'IDEmacs
+- ~gptel pour utiliser Chat-GPT directement dans l'IDEmacs (HeCy)~
 - mu4 pour lire les mails de l'ied dans l'IEDmacs
 - ajout du modèle latex TexIED8 de amartos
 - ~ajout du package `which-key` pour afficher un menu (déjà inclus dans la v30)~
 - ajout du package `plantuml-mode` (cf. [GitHub](https://github.com/skuro/plantuml-mode)) pour faire des diagrammes
 - ajout de better-shell (peut être pas)
 - ajout du paquet multiple-cursor (quand j'aurai compris comment il fonctionne)
-- ~amélioration du temps de chargement(v1)~ 
-- ~Suppression du clignement du curseur.(v1)~
-- ~Suppression de la barre de défilement sur le côté droit de la fenêtre (V1)~
+- ~amélioration du temps de chargement(HeCy)~ 
+- ~Suppression du clignement du curseur.(HeCy)~
+- ~Suppression de la barre de défilement sur le côté droit de la fenêtre (HeCy)~
+- Intregration du package ~denote.el~ pour organiser ses notes
