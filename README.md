@@ -95,3 +95,4 @@ Prochains ajouts prévus:
 - ~Suppression du clignement du curseur.(HeCy)~
 - ~Suppression de la barre de défilement sur le côté droit de la fenêtre (HeCy)~
 - Intregration du package ~denote.el~ pour organiser ses notes
+- Morceau de code permettant de ne plus afficher certains fichiers dans dired
