@@ -670,7 +670,7 @@ voulez, mais à titre d'exemple, disons juste avant la ligne
              'follow-link t
              'help-echo (concat "Ouvrir : " file)) ;; Info-bulle
 ;; Afficher le chemin complet abrégé en gris clair
-(insert "    " (propertize (abbreviate-file-name file) 'face 'shadow) "\n")))
+(insert "    " (propertize (abbreviate-file-name (file-name-directory file)) 'face 'shadow) "\n")))
 #+end_src
 
 La fonction est aussi accessible en utilsant la commande ~Alt-x
