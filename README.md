@@ -1,7 +1,7 @@
 _Ces informations sont fournies à titres indicatif et visent à offrir
 une introduction rapide à l'utilisation de l'IEDmacs. Pour des
 informations plus détaillées et approfondies, veuillez consulter le
-fichier ~iedmacs.org~ qui contient une documentation complète sur
+fichier `iedmacs.org` qui contient une documentation complète sur
 l'exploitation et la personnalisation de l'IEDmacs_
 
 *Dernière Version : Hera Cyber 0.1*
