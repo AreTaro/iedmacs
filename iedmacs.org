@@ -472,18 +472,26 @@ l'ouverture mais aussi tout au long de son utilisation.
 (global-set-key (kbd "M-o") 'ace-window)
 #+end_src
 
-*** Alias
+*** Ibuffer
+
+Ibuffer est un paquet par défaut dans emacs depuis la
+version 22. Permet une visualisation plus commode des buffers en
+table, à la façon de Dired pour les fichiers.
 
 #+begin_src emacs-lisp :tangle "init.el"
-;; better visualization of buffer-list
+;; Meilleur visualisation de la list des buffers
 (defalias 'list-buffers 'ibuffer)
 ;;(defalias 'list-buffers 'ibuffer-other-window)
+#+end_src
 
-;; to set up the directory file, when opening new file
+*** Répertoire par défaut
+
+Configuration du répertoire par défaut, lors de la recherche de
+fichier par exemple.
+
+#+begin_src emacs-lisp :tangle "init.el"
+;; Fixe le répertoire par défaut lors de l'ouverture d'un fichier
 (setq default-directory "~/")
-
-;; to display line number
-;; (global-display-line-numbers-mode)
 #+end_src
 
 *** Barre de commande
