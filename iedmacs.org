@@ -466,9 +466,14 @@ l'ouverture mais aussi tout au long de son utilisation.
 
 *** Ace window
 
+La fonction principale,~ace-window~ est faite pour remplacer
+~other-windows~ en affectant à chaque fenêtre un court, et unique
+label. Quant il n'y a que deux fenêtre présentes, ~other-window~ est
+appelé (à mon que ~aw-dispatch-always soit fixer à ~non-nil~)
+
 #+begin_src emacs-lisp :tangle "init.el"
 ;; PACKAGE NAME: ace-window
-;; PURPOSE: select a window more easily
+;; DESCRIPTION: Changement rapide de fenêtre
 (global-set-key (kbd "M-o") 'ace-window)
 #+end_src
 
