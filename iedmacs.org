@@ -850,6 +850,12 @@ fichier n'est spécifié au démarrage.
 (evil-define-key 'normal 'global (kbd "<leader>tl") 'load-themes)
 (evil-define-key 'normal 'global (kbd "<leader>ss") 'swiper)
 (evil-define-key 'normal 'global (kbd "<leader>l") 'org-insert-link)
+
+;; Raccourcis pour Emacs Web Wrowser
+(evil-define-key 'normal 'global (kbd "<leader>er") 'eww-forward-url)
+(evil-define-key 'normal 'global (kbd "<leader>el") 'eww-back-url)
+(evil-define-key 'normal 'global (kbd "<leader>ew") 'eww-search-words)
+(evil-define-key 'normal 'global (kbd "<leader>eo") 'eww-open-in-new-buffer)
 #+end_src
 
 *** gptel
