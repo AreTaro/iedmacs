@@ -1,5 +1,5 @@
 ;; IDEmacs by Emacs, un IDE pour l'IED.
-;; VERSION : Hera Cyber 0.1.0
+;; VERSION : Hera Cyber 0.2.0
 ;; LICENCE : GPLv3
 
 ;; Supprimer le message de démarrage
@@ -23,18 +23,15 @@
 (scroll-bar-mode -1)
 
 ;; PACKAGE NAME: ace-window
-;; PURPOSE: select a window more easily
+;; DESCRIPTION: Changement rapide de fenêtre
 (global-set-key (kbd "M-o") 'ace-window)
 
-;; better visualization of buffer-list
+;; Meilleur visualisation de la list des buffers
 (defalias 'list-buffers 'ibuffer)
 ;;(defalias 'list-buffers 'ibuffer-other-window)
 
-;; to set up the directory file, when opening new file
+;; Fixe le répertoire par défaut lors de l'ouverture d'un fichier
 (setq default-directory "~/")
-
-;; to display line number
-;; (global-display-line-numbers-mode)
 
 (display-time-mode 1)
 (setq display-time-day-and-date t)
@@ -287,6 +284,12 @@ kept-old-versions 5    ; and how many of the old
 (evil-define-key 'normal 'global (kbd "<leader>ss") 'swiper)
 (evil-define-key 'normal 'global (kbd "<leader>l") 'org-insert-link)
 
+;; Raccourcis pour Emacs Web Wrowser
+(evil-define-key 'normal 'global (kbd "<leader>er") 'eww-forward-url)
+(evil-define-key 'normal 'global (kbd "<leader>el") 'eww-back-url)
+(evil-define-key 'normal 'global (kbd "<leader>ew") 'eww-search-words)
+(evil-define-key 'normal 'global (kbd "<leader>eo") 'eww-open-in-new-buffer)
+
 ;; ido to easy find the names of files, docs, when searching
 ;;(setq indo-enable-flex-matching t) ;; unavailable
 (setq ido-everywhere t)
@@ -415,9 +418,20 @@ manual."
 (use-package try
 :ensure t)
 
-;; PACKAGE NAME: whick-key
-;; PURPOSE: to help to find next key, using a
-;; menu at the bottom of the window
+;; NOM DU PAQUET: whick-key
+;; OBJECTIF: Aider à trouver la prochaine touche, 
+;; en utilisant la barre de menu en bas de la fenêtre
 (use-package which-key
 :ensure t
-:config (which-key-mode))
+:config (which-key-mode)
+(setq which-key-idle-delay 0.3) ;; Ajuste le délai avant l'affichage du menu
+(which-key-add-key-based-replacements
+    "SPC b" "Buffer"
+    ;;"SPC d" "Denote"
+    "SPC e" "Eww"
+    ;;"SPC i" "Indent"
+    "SPC f" "File"
+    ;;"SPC g" "Gptel"
+    "SPC s" "Search" 
+    "SPC t" "Theme"
+    "SPC w" "Window") )
