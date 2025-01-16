@@ -1123,12 +1123,23 @@ Which-key permet de visualiser les raccourcis possibles d'une commande
 en cours. Ce paquet sera inclue dans la version 30 de emacs.
 
 #+begin_src emacs-lisp :tangle "init.el"
-;; PACKAGE NAME: whick-key
-;; PURPOSE: to help to find next key, using a
-;; menu at the bottom of the window
+;; NOM DU PAQUET: whick-key
+;; OBJECTIF: Aider à trouver la prochaine touche, 
+;; en utilisant la barre de menu en bas de la fenêtre
 (use-package which-key
 :ensure t
-:config (which-key-mode))
+:config (which-key-mode)
+(setq which-key-idle-delay 0.3) ;; Ajuste le délai avant l'affichage du menu
+(which-key-add-key-based-replacements
+    "SPC b" "Buffer"
+    ;;"SPC d" "Denote"
+    "SPC e" "Eww"
+    ;;"SPC i" "Indent"
+    "SPC f" "File"
+    ;;"SPC g" "Gptel"
+    "SPC s" "Search" 
+    "SPC t" "Theme"
+    "SPC w" "Window") )
 #+end_src
 
 ** A faire
