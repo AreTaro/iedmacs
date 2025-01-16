@@ -375,16 +375,20 @@ voir venir, et encore de longues années devant pour l'IEDmacs.
 19. Hestia Techno
 20. Benzaiten Globo
 
-**Apollon Funky**
+**** *Apollon Funky* (Novembre 2024)
 - *0.0.0* Première version Apollon Funky, Novembre 2024
 - *0.3.0*: which-key menu rendu visible
 - *0.4.0*: pdf-tools, barre de commande modifiée
 
-**Hera Cyber**
+**** *Hera Cyber* (Janvier 2025)
 - *0.0.0*: optimisation de la vitesse de démarrage, gptel, Fichiers
   récents, clignotement du curseur, surlignage de la ligne du curseur,
   localisation de la sauvegarde des fichiers, condition de la page
   d'ouverture.
+- *0.2.0*: raccourcis pour eww en evil mode
+
+**** *Izanagi Groovy* (Mars 2025)
+- *0.0.0*: 
 
 ** Carte de référence rapide
 Aide-mémoire des commandes et raccourcis clavier les plus utilisés.
@@ -430,7 +434,7 @@ Voici le contenu de ce bloc d'entête :
 
 #+begin_src emacs-lisp :tangle "init.el"
 ;; IDEmacs by Emacs, un IDE pour l'IED.
-;; VERSION : Hera Cyber 0.1.0
+;; VERSION : Hera Cyber 0.2.0
 ;; LICENCE : GPLv3
 #+end_src
 
