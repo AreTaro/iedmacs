@@ -245,13 +245,14 @@ attentes.
 - ~+~ ou ~-~ pour le zoom avant et arrière
 - ~H~ pour ajuster en hauteur
 - ~W~ pour ajuster en largeur
-- ~P~ pour ajuter à la page
+- ~P~ pour ajuter à la taille de la page
 - ~n~ page suivante
 - ~p~ page précédente
 - ~Ctrl-n~ pour descendre dans la page
 - ~Ctrl-p~ pour monter dans la page
 - ~o~ pour afficher la table de matière
 - ~Alt-g g~ pour sauter à une page indiquée
+- ~k~ fermer le pdf ("kill" probablement)
 
 Pour plus d'informations pour l'instant consulté le dépôt Github du
 paquet en anglais : [[https://github.com/vedang/pdf-tools/tree/30b50544e55b8dbf683c2d932d5c33ac73323a16?tab=readme-ov-file#view-and-navigate-pdfs][git repository]].
