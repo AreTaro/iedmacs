@@ -332,21 +332,21 @@ d'informations, référez-vous à la documentation d'Emacs :
 
 *Ouvrir un lien*
 
-- =Ctrl-c=, =Ctrl-o=
+- ~Ctrl-c Ctrl-o~
 
 *Rechercher un mot ou une adresse*
 
-- =Alt-s=, =Alt-w=
+- ~Alt-s Alt-w~
 
 *Naviguer dans l'historique*
 
-- Pour avancer : =r= (eww-forward-url)
-- Pour reculer : =l= (eww-back-url)
+- Pour avancer : ~r~ (eww-forward-url)
+- Pour reculer : ~l~ (eww-back-url)
 
 *Remarques :*
 
-- Ces raccourcis ne fonctionnent qu'en mode Emacs, et non en mode
-Evil, sauf s'ils sont définis explicitement.
+- Ces raccourcis ne fonctionnent qu'en mode Emacs. En mode evil, les
+  raccourcis sont accessibles avec ~SPC e~.
 
 ** Notes de version
 Informations sur les changements importants.
