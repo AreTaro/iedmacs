@@ -285,7 +285,7 @@ sera visible dans le buffer.
 - Appuyer sur Entrée pour selectionner. Cela fermera la fenêtre et
 déplacera le curseur à l'endroit choisi.
 
-*** LLM
+*** GPT et autres LLM
 
 Le paquet ~gptel~ fournit un moyen d'envoyer des prompts directement à
 partir d'un buffer dans Emacs. Pour activer GPTel, vous pouvez ajouter
