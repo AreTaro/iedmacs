@@ -820,18 +820,32 @@ fichier n'est spécifié au démarrage.
 
 *** Evil Mode
 
+Evil (Extensible VIm Layer) est paquet permettant l'utilisation des
+principaux raccourci de l'IDE VIM dans Emacs.
+
 #+begin_src emacs-lisp :tangle "init.el"
 ;; ====== EVIL MODE SETTINGS ========
-;; PACKAGE: evil
-;; PURPOSE: using Vim shortcuts in emacs 
+;; PAQUET: evil
+;; OBJECTIF : Utiliser les raccourcis VIM dans Emacs
 (use-package evil
 :ensure t
 :init(setq evil-want-C-i-jump nil))
+#+end_src
 
+**** Activation au démarrage
+
+Par défault l'~evil-mode~ est inactif (~evil-mode 0~). Pour l'activer
+automatiquement, fixer le paramètre à ~1~.
+
+#+begin_src emacs-lisp :tangle "init.el"
 (setq evil-default-state 'normal)
 (require 'evil)
 (evil-mode 0)
+#+end_src
 
+**** Raccourcis clavier
+
+#+begin_src emacs-lisp :tangle "init.el"
 ;; Biding keys
 ;; to change evil to emacs C-z
 (evil-set-leader 'normal (kbd "SPC"))
