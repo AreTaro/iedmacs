@@ -823,6 +823,8 @@ fichier n'est spécifié au démarrage.
 Evil (Extensible VIm Layer) est paquet permettant l'utilisation des
 principaux raccourci de l'IDE VIM dans Emacs.
 
+Pour plus de détail voir le dépôt [[https://github.com/emacs-evil/evil][GitHub]].
+
 #+begin_src emacs-lisp :tangle "init.el"
 ;; ====== EVIL MODE SETTINGS ========
 ;; PAQUET: evil
