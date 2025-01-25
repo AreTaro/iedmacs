@@ -14,7 +14,7 @@ Pour une assistance à la prise en main d'Emacs et pour rendre les devoirs de l'
 
 - `init.el` : Fichier de configuration pour IEDmacs, à placer dans le répertoire `~/.emacs.d`.
 - `ied-latex-standard.org` : Fichier de configuration pour l'export en latex et PDF.
-- `iedmacs.org` : Le manuel d'IEDmacs.
+- `iedmacs.org` : Le manuel d'IEDmacs, et le générateur du fichier `init.el`
 
 ## Installation
 
