@@ -219,10 +219,8 @@ indications est décrite ci-dessous en partant de la gauche :
 pour /vim/ et "I" pour le mode d'insertion de Vim.
 - Les deux lettres suivantes correspondent au mode d'écriture
 (~input-mode~) avec "FR" pour le clavier français et "EN" pour le
-clavier anglais. C'est le clavier anglais qui est ouvert par
-défaut. Le clavier français est nécessaire pour écrire avec les
-accents mais vraiment tout pourri lorsqu'il faut écrire des chiffres
-ou des symboles. Désolé pour cela.
+clavier anglais. Le clavier anglais est par défaut. Pour changer de
+clavier il faut utiliser la commande ~C-\~ en mode ~input~.
 - Ensuite la date et l'heure sont affichés. Il est possible d'ajouter
 une seconde horloge en recopiant la partie de code correspondante et
 en ajoutant la zone comme suit ~"%H:%M " (current-time)
