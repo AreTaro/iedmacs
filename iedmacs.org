@@ -184,6 +184,7 @@ les vôtres.
 #+END_SRC
 
 *Méthode 2*
+
 Sur la page d'accueil de l'IEDmacs, sélectionner le lien
 "Rédiger un devoir dans l'IEDmacs". Cela ouvrira un nouveau
 buffer avec le code ci-dessus et quelques
@@ -196,8 +197,10 @@ détails sur la syntax voir le dépôt en anglais [[https://github.com/fniessen/
 
 Vous pouvez également utiliser la synthaxe LaTex au sein de votre
 fichier ".org" en utilisant le raccourci ~Ctrl-c Ctrl-, l~ (Clavier
-azerty). Pour plus d'information sur la synthaxe LaTex voir le
-dépôt de [[https://github.com/amartos/TexIEDP8][amartos]].
+azerty). Vous pouvez également écrire directement avec les balises
+LaTex dans votre document ".org". Pour plus d'information sur la
+synthaxe LaTex voir le dépôt de [[https://github.com/amartos/TexIEDP8][amartos]], ou sur le site du tuteur
+informatique de l'ENS dédié au [[https://tuteurs.ens.fr/logiciels/latex/][LaTex]].
 
 3. Editer votre devoir au format PDF
 Une fois votre devoir ou document rédiger, il suffit d'utiliser le
