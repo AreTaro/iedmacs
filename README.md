@@ -89,11 +89,12 @@ Prochains ajouts prévus:
 - ajout du modèle latex TexIED8 de amartos
 - ~ajout du package `which-key` pour afficher un menu (déjà inclus dans la v30)~
 - ajout du package `plantuml-mode` (cf. [GitHub](https://github.com/skuro/plantuml-mode)) pour faire des diagrammes
-- ajout de better-shell (peut être pas)
-- ajout du paquet multiple-cursor (quand j'aurai compris comment il fonctionne)
+- ajout de better-shell (peut être pas, paquet shell fonctionne bien mieux)
+- ajout du paquet multiple-cursor (déjà inclus?)
 - ~amélioration du temps de chargement(HeCy)~ 
 - ~Suppression du clignement du curseur.(HeCy)~
 - ~Suppression de la barre de défilement sur le côté droit de la fenêtre (HeCy)~
 - Intregration du package `denote.el` pour organiser ses notes
 - Morceau de code permettant de ne plus afficher certains fichiers dans dired
 - Ajout du package `magit` pour utiliser plus facilement Git
+- Ajout du package ~ellama~ permettant de faire tourner des LLM en local.
