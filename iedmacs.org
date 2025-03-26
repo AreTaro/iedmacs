@@ -910,7 +910,6 @@ données, ainsi que de l'empreinte carbone désastreuse de ces modèles.
 (progn (unload-feature 'seq t) (require 'seq))
 #+end_src
 
-
 Pour le bloc suivant il est recommander de créer un module particulier
 pour vos clés API, afin d'éviter de les partager si vous souhaitez
 mettre votre fichier ~init.el~ sur GitHub par exemple.
