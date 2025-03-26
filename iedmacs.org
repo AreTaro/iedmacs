@@ -389,8 +389,9 @@ voir venir, et encore de longues années devant pour l'IEDmacs.
   d'ouverture.
 - *0.2.0*: raccourcis pour eww en evil mode
 
-**** *Izanagi Groovy* (Mars 2025)
-- *0.0.0*: 
+**** *Izanagi Groovy* (Avril 2025)
+- *0.0.0*: Modification du fichier latex pour avoir la table des
+  matières en français, 
 
 ** Carte de référence rapide
 Aide-mémoire des commandes et raccourcis clavier les plus utilisés.
