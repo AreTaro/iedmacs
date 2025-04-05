@@ -903,29 +903,32 @@ tarification.
 
 **** ellama
 
-Pour utiliser ~ellama~, il vous faudra tout d'abord installer
-~ollama~.
+Pour plonger dans l'univers d'~ellama~, la première étape consiste à
+installer ~ollama~.
 
-En date du <2025-04-06 Sun>, l'installation est assez simple et peux
-s'effectuer en 3 commandes :
+À la date du <2025-04-06>, l'opération d'installation se révèle d'une
+simplicité déconcertante, ne nécessitant que trois commandes :
 
-- ~curl -fsSL https://ollama.com/install.sh | sh~ pour installer ollama
-depuis le site officiel
-- ~ollama --version~ pour confirmer la version installée
-- ~ollama pull gemma3:4b~ pour installer gemma3 (plus petite version
-  multimodale), mais il en existe beaucoup d'autres. (cf. le site
-  officiel)
+- ~curl -fsSL https://ollama.com/install.sh | sh~ pour récupérer
+  ~ollama~ directement depuis le site officiel.
+- ~ollama --version~ pour vérifier la version actuellement installée.
+- ~ollama pull gemma3:4b~ pour ajouter à votre arsenal ~gemma3~, une
+  version multimodale compacte, entre autres options disponibles
+  (consultez le site officiel pour plus de détails).
 
-De cette manière le modèle installé 
+Ainsi, votre modèle est prêt à s'animer. Il sera possible de
+l'exécuter directement depuis le shell avec la commande ~ollama run
+gemma3:4b~.
 
-Ensuite il faudra installer ~ellama~ avec ~M-x package-install
-ellama~. Si la version sur ELPA est plus récente que celle indiqué sur
-votre machine, il est possible que cela retourne une erreur durant
-l'installation. Pour résoudre l'erreur, il faut rafraîchir le contenu
-de emacs avec la commande ~M-x package-refresh-content~, puis relancer
-emacs.
+Ensuite, il vous faudra installer ~ellama~ à l'aide de la commande
+~M-x package-install ellama~. Si la version sur ELPA s'avère plus
+récente que celle présente sur votre machine, des erreurs pourraient
+survenir durant l'installation. Pour remédier à cette situation,
+rafraîchissez le contenu d'Emacs avec ~M-x package-refresh-content~,
+puis relancez le programme.
 
-Enfin, dans le fichier init il faut ajouter le code suivant :
+Enfin, n'oubliez pas d'ajouter le code suivant dans votre fichier
+init :
 
 #+begin_src emacs-lisp
 (use-package ellama
