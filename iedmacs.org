@@ -350,6 +350,18 @@ d'informations, référez-vous à la documentation d'Emacs :
 - Ces raccourcis ne fonctionnent qu'en mode Emacs. En mode evil, les
   raccourcis sont accessibles avec ~SPC e~.
 
+*** shell
+
+Accéder au terminal du shell est simple en utilisant la commande ~M-x
+shell~. Ceci ouvrira le shell dans un nouveau buffer.
+
+Tandis que ~eshell~ offre une émulation du shell implémentée
+directement en Emacs Lisp, l'Iedmacs préfère utiliser le ~shell~.
+
+~Alt-p~ commande précédente
+
+~Alt-n~ commande suivante
+
 ** Notes de version
 Informations sur les changements importants.
 *** nom des versions
