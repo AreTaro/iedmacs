@@ -1238,10 +1238,12 @@ Les sources principales qui m'ont permis d'avancer dans l'utilisation,
 la configuration d'Emacs, mais également de sa philosophie sont par
 ordre de découverte :
  
-- Mike Zamansky
+- Mike Zamansky, professeur d'université, simple et pédagogique.
 
-- Protesilaos Stavrou (Prot)
- 
+- Protesilaos Stavrou (Prot), philosophe, détaillé et pragmatique.
+
+- [[eww:https://systemcrafters.net/][System Crafters]], pour geek et niveau avancé.
+
 Cette liste est tout à fait personnelle, et ne reflète absolument pas
 le degré réel de connaissance et d'implication des personnes, même si
 il semble que Prot soit très actif dans la communauté Emacs.
