@@ -1089,6 +1089,65 @@ organiser et gérer efficacement les dépendances des paquets Emacs.
 (setq use-package-always-ensure t))
 #+end_src
 
+*** PlantUML
+
+PlantUML est un outil open-source qui permet de créer des diagrammes à partir de texte.
+
+Étant donné que l'utilisation de PlantUML dans Aremacs nécessite des
+installations préalables, décrites ci-dessous, le paquet n'est pas
+installé par défaut. Pour l'activer, il est nécessaire de procéder aux
+installations depuis le terminal, d'installer le paquet dans Emacs,
+puis d'ajouter le code suivant dans votre fichier /init.el/, en
+incluant ~:tangle "init.el"~ comme pour les autres blocs.
+
+*Installation depuis le Shell*
+
+Pour utiliser /plantuml/ dans Emacs, il est essentiel d'avoir au
+préalable installé les composants suivants :
+
+- Java (exécutez la commande : ~sudo apt install default-jdk~),
+- PlantUML (exécutez la commande : ~sudo apt install plantuml~),
+- et Graphviz (exécutez la commande : ~sudo apt install graphviz~).
+
+*Installation depuis Emacs*
+
+Il est aussi nécessaire d'installer le paquet ~plantuml-mode~ (~M-x
+package-install~) sur emacs.
+
+*Configuration du fichier init.el*
+
+Ensuite dans le fichier /init.el/, ajouter le code suivant. Pour
+connaitre le chemin vers le fichier plantuml.jar (préalablement
+téléchargé directement à partir du site ou avec la commande ~sudo apt
+install plantuml~, utiliser la commande ~dpkg -L plantuml | grep '\.jar$'~.
+
+#+begin_src emacs-lisp 
+;; PLantUML
+;; Définir le chemin du JAR pour Org Babel, même si on utilise l'exécutable
+(setq org-plantuml-jar-path "/usr/share/plantuml/plantuml.jar")
+(require 'plantuml-mode)
+
+;; Si l'exécutable 'plantuml' est dans le PATH, ceci peut suffire
+(setq plantuml-default-exec-mode :executable)
+
+;; (Optionnel) Définir le type de sortie par défaut (png ou svg)
+(setq plantuml-output-type "png")
+#+end_src
+
+Ensuite pour l'utiliser dans un document orgmode, executer le code
+plantuml entre des balises _SRC avec ~C-c C-c~.
+
+#+begin_src plantuml :file test-diagram.png
+ @startuml
+ Bob -> Alice : Hello
+ Alice -> Bob : Hi!
+ @enduml
+#+end_src
+
+Pour plus d'information sur le code plantuml:
+- [[eww:https://usermanual.wiki/Pdf/PlantUMLLanguageReferenceGuideFR.1126508166/help][Guide de Référence]] (en français)
+- [[eww:https://www.geeksforgeeks.org/unified-modeling-language-uml-introduction/][GeeksforGeeks]]  (en anglais)
+
 *** pdf-tools
 Paquet permettant de visualiser et modifier les fichiers PDF. Utiliser
 également lors de l'export avec la commande ~C-v C-e l o~ dont le "o"
