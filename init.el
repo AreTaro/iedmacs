@@ -251,8 +251,8 @@ kept-old-versions 5    ; and how many of the old
 	      (iedmacs-startup-buffer))))
 
 ;; ====== EVIL MODE SETTINGS ========
-;; PACKAGE: evil
-;; PURPOSE: using Vim shortcuts in emacs 
+;; PAQUET: evil
+;; OBJECTIF : Utiliser les raccourcis VIM dans Emacs
 (use-package evil
 :ensure t
 :init(setq evil-want-C-i-jump nil))
